@@ -1,4 +1,4 @@
-name: My Badges Update Workflow
+name: my-badges
 
 on:
   workflow_dispatch:
@@ -9,34 +9,10 @@ permissions:
   contents: write
 
 jobs:
-  update-badges:
+  my-badges:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm install update-my-badges@latest
-
       - name: Update My Badges
-        run: npx update-my-badges ${{ github.repository_owner }}
-
-      - name: Check for Changes
-        id: git-check
-        run: |
-          if git status --porcelain | grep -q '^[AM]'; then
-            echo "::set-output name=changes::true"
-          else
-            echo "::set-output name=changes::false"
-          fi
-
-      - name: Commit and Push Changes
-        if: steps.git-check.outputs.changes == 'true'
-        run: |
-          git add -A
-          git commit -m "Update badges"
-          git push
+        run: npx update-my-badges ${{github.repository_owner}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
