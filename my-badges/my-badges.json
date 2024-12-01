@@ -31,7 +31,7 @@
     "id": "evening-commits",
     "tier": 0,
     "desc": "I commit in the evening.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/dotfiles/commit/205dae91f2b862415439ca6e003cbad011c3f17e\">205dae9</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/9e95a86ce70e7854f6ae986cef3bba17dc391a63\">9e95a86</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/967ce2a72329f7af7e2789619c31bd6c30573081\">967ce2a</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/3b044329cc2a5fb1f6992a87a674046520e5f0b0\">3b04432</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/8cd88b315d94a231c1e12e71cf5971094d696157\">8cd88b3</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/269380f9e5dffccb7f3d9836228be484de20a1a1\">269380f</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/dotfiles/commit/270eee2c57eec71f26104ac4f4ad0ee477606ee4\">270eee2</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/205dae91f2b862415439ca6e003cbad011c3f17e\">205dae9</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/9e95a86ce70e7854f6ae986cef3bba17dc391a63\">9e95a86</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/967ce2a72329f7af7e2789619c31bd6c30573081\">967ce2a</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/3b044329cc2a5fb1f6992a87a674046520e5f0b0\">3b04432</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/8cd88b315d94a231c1e12e71cf5971094d696157\">8cd88b3</a>",
     "image": "https://my-badges.github.io/my-badges/evening-commits.png"
   },
   {
@@ -87,7 +87,7 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"to\".",
-    "body": "My favorite commit message words are:\n\n1. to (used 1684 times)\n2. and (used 1614 times)\n3. the (used 1385 times)\n4. for (used 1095 times)\n5. in (used 715 times)",
+    "body": "My favorite commit message words are:\n\n1. to (used 1684 times)\n2. and (used 1619 times)\n3. the (used 1387 times)\n4. for (used 1099 times)\n5. in (used 717 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
