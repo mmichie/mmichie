@@ -4,7 +4,10 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/cardsharp/commit/76c1a8359b583775bd6cb223f444ba02026100c9">76c1a83</a>: chore: update poetry
+- <a href="https://github.com/mmichie/m28/commit/256326a84a3fd7935fbbc469af7b52e3ced25415">256326a</a>: chore: update .gitignore to exclude bin directory
+
+This change adds the 'bin/' directory to the .gitignore file, preventing compiled binaries from
+being tracked by Git.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

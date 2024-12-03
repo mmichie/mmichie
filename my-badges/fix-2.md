@@ -4,16 +4,14 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/cardsharp/commit/88194c60da7781472bb4df12d956d7c74a586b8c">88194c6</a>: fix(blackjack): enforce split ace rules
+- <a href="https://github.com/mmichie/m28/commit/76180da2732f80fe98174cd439281f78073bf04c">76180da</a>: fix(builtin): improve integer check and function lookup
 
-- Prevent hitting on split aces after receiving one card
-- Force stand on split aces after receiving one card
-- Disallow doubling down on split aces
-- Improve split ace detection and handling
-- <a href="https://github.com/mmichie/cardsharp/commit/6b0382fb785c16cb3b0a3f1fd1c6d05bb52d274f">6b0382f</a>: fix(blackjack): correct blackjack detection and payout
+- Enhance isInteger function to handle float64 values
+- Add symbol lookup in environment for applyFunc
+- <a href="https://github.com/mmichie/m28/commit/e415fb95f562ff4e9eca6c95985824ffd2c6aaee">e415fb9</a>: fix: improve isNull and assertFunc implementations
 
-- Update is_blackjack property to check for Ace and ten-value card
-- Ensure split hands are not considered blackjack in payout calculation
+- Add nil case handling in isNull function
+- Refactor assertFunc for better readability and consistency
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
