@@ -79,8 +79,8 @@
   {
     "id": "favorite-word",
     "tier": 0,
-    "desc": "My favorite word is \"to\".",
-    "body": "My favorite commit message words are:\n\n1. to (used 1695 times)\n2. and (used 1636 times)\n3. the (used 1387 times)\n4. for (used 1114 times)\n5. in (used 719 times)",
+    "desc": "My favorite word is \"-\".",
+    "body": "My favorite commit message words are:\n\n1. - (used 2864 times)\n2. add (used 694 times)\n3. function (used 493 times)\n4. update (used 383 times)\n5. new (used 333 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
