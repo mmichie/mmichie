@@ -4,12 +4,12 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/dotfiles/commit/763bf11593361c72bdbf4d28ba181c195c5ebc65">763bf11</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/1086018b4d1a47817a38738f8697a7574671d2ad">1086018</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/270eee2c57eec71f26104ac4f4ad0ee477606ee4">270eee2</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/205dae91f2b862415439ca6e003cbad011c3f17e">205dae9</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/9e95a86ce70e7854f6ae986cef3bba17dc391a63">9e95a86</a>
-- <a href="https://github.com/mmichie/cardsharp/commit/967ce2a72329f7af7e2789619c31bd6c30573081">967ce2a</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/f02a524086a11201021ece4b44bce4c46fee38da">f02a524</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/5cff5d2159d0951f3cd7f59f70557079a69916b4">5cff5d2</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/f4d3e946cd3fbd7f1bf65249a7102a5aa9f9b90e">f4d3e94</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/5d7df8119ed562c4845f106692f680c56718d20a">5d7df81</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/d30e3ae77b94b685c1ba5c1fcd5088a80435826c">d30e3ae</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/e2f5b6dde3c97db907b8a8889b443d4ab040dc7f">e2f5b6d</a>
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
