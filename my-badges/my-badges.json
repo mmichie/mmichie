@@ -31,7 +31,7 @@
     "id": "evening-commits",
     "tier": 0,
     "desc": "I commit in the evening.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/dotfiles/commit/72e528c6be70d0b6f2406138b4bfa6888868aed0\">72e528c</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/69c60177dd2c9f0e637f999c1eff6f11476e493d\">69c6017</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/fe3616f65d9bd04f18406c7bbd216583ead5e208\">fe3616f</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/f02a524086a11201021ece4b44bce4c46fee38da\">f02a524</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/5cff5d2159d0951f3cd7f59f70557079a69916b4\">5cff5d2</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/f4d3e946cd3fbd7f1bf65249a7102a5aa9f9b90e\">f4d3e94</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/huachuca/commit/b5bdefca9c3af9ed96597e5f2af0961f90045f99\">b5bdefc</a>\n- <a href=\"https://github.com/mmichie/huachuca/commit/1486b1c0082184abf21fa55801593eb125a97f56\">1486b1c</a>\n- <a href=\"https://github.com/mmichie/huachuca/commit/94da680d03c413c9c7557854927f52ddb33cf984\">94da680</a>\n- <a href=\"https://github.com/mmichie/huachuca/commit/60ea82a1ac8e1f5d5615943776451ca2375ab38e\">60ea82a</a>\n- <a href=\"https://github.com/mmichie/huachuca/commit/5c656b808cfecebfb4344e5fff0b7d14d8cdf1dd\">5c656b8</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/72e528c6be70d0b6f2406138b4bfa6888868aed0\">72e528c</a>",
     "image": "https://my-badges.github.io/my-badges/evening-commits.png"
   },
   {
@@ -80,21 +80,21 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"add\".",
-    "body": "My favorite commit message words are:\n\n1. add (used 724 times)\n2. function (used 501 times)\n3. update (used 387 times)\n4. new (used 333 times)\n5. implement (used 332 times)",
+    "body": "My favorite commit message words are:\n\n1. add (used 771 times)\n2. function (used 503 times)\n3. update (used 400 times)\n4. implement (used 347 times)\n5. new (used 341 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
     "id": "chore-commit",
     "tier": 0,
     "desc": "I did a little housekeeping! 🧹",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/256326a84a3fd7935fbbc469af7b52e3ced25415\">256326a</a>: chore: update .gitignore to exclude bin directory\n\nThis change adds the 'bin/' directory to the .gitignore file, preventing compiled binaries from\nbeing tracked by Git.",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/huachuca/commit/b5bdefca9c3af9ed96597e5f2af0961f90045f99\">b5bdefc</a>: chore: update module name\n\nupdate go module name to github path",
     "image": "https://my-badges.github.io/my-badges/chore-commit.png"
   },
   {
     "id": "cosmetic-commit",
     "tier": 0,
     "desc": "I made cosmetic commit.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/dotfiles/commit/a936dfc74f6afd6369a6adf4c43f54ba0d64ab6f\">a936dfc</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/70507cedd1902478f3465d1c1b10038d54cda66f\">70507ce</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/08087c31f98efe7c81e73777ac300ea627b43ec8\">08087c3</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/9e95a86ce70e7854f6ae986cef3bba17dc391a63\">9e95a86</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/5587ae985b0729470c4375be163066807cbf5083\">5587ae9</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/0cc97fec8b8f79754d9e45e21ce84687e7985bec\">0cc97fe</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/huachuca/commit/adb4cc1d0ee6c96efd4b2f3fe6c0d6f12f9bf62c\">adb4cc1</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/a936dfc74f6afd6369a6adf4c43f54ba0d64ab6f\">a936dfc</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/70507cedd1902478f3465d1c1b10038d54cda66f\">70507ce</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/08087c31f98efe7c81e73777ac300ea627b43ec8\">08087c3</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/9e95a86ce70e7854f6ae986cef3bba17dc391a63\">9e95a86</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/5587ae985b0729470c4375be163066807cbf5083\">5587ae9</a>",
     "image": "https://my-badges.github.io/my-badges/cosmetic-commit.png"
   },
   {

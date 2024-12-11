@@ -4,10 +4,9 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/256326a84a3fd7935fbbc469af7b52e3ced25415">256326a</a>: chore: update .gitignore to exclude bin directory
+- <a href="https://github.com/mmichie/huachuca/commit/b5bdefca9c3af9ed96597e5f2af0961f90045f99">b5bdefc</a>: chore: update module name
 
-This change adds the 'bin/' directory to the .gitignore file, preventing compiled binaries from
-being tracked by Git.
+update go module name to github path
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

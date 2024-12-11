@@ -4,12 +4,12 @@
 
 Commits:
 
+- <a href="https://github.com/mmichie/huachuca/commit/b5bdefca9c3af9ed96597e5f2af0961f90045f99">b5bdefc</a>
+- <a href="https://github.com/mmichie/huachuca/commit/1486b1c0082184abf21fa55801593eb125a97f56">1486b1c</a>
+- <a href="https://github.com/mmichie/huachuca/commit/94da680d03c413c9c7557854927f52ddb33cf984">94da680</a>
+- <a href="https://github.com/mmichie/huachuca/commit/60ea82a1ac8e1f5d5615943776451ca2375ab38e">60ea82a</a>
+- <a href="https://github.com/mmichie/huachuca/commit/5c656b808cfecebfb4344e5fff0b7d14d8cdf1dd">5c656b8</a>
 - <a href="https://github.com/mmichie/dotfiles/commit/72e528c6be70d0b6f2406138b4bfa6888868aed0">72e528c</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/69c60177dd2c9f0e637f999c1eff6f11476e493d">69c6017</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/fe3616f65d9bd04f18406c7bbd216583ead5e208">fe3616f</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/f02a524086a11201021ece4b44bce4c46fee38da">f02a524</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/5cff5d2159d0951f3cd7f59f70557079a69916b4">5cff5d2</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/f4d3e946cd3fbd7f1bf65249a7102a5aa9f9b90e">f4d3e94</a>
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
