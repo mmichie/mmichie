@@ -80,7 +80,7 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"add\".",
-    "body": "My favorite commit message words are:\n\n1. add (used 777 times)\n2. function (used 503 times)\n3. update (used 402 times)\n4. implement (used 347 times)\n5. new (used 345 times)",
+    "body": "My favorite commit message words are:\n\n1. add (used 804 times)\n2. function (used 509 times)\n3. update (used 406 times)\n4. implement (used 357 times)\n5. new (used 349 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
@@ -129,7 +129,7 @@
     "id": "sleepy-coder",
     "tier": 0,
     "desc": "I am a sleepy coder.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/cardsharp/commit/3ea245a9abedb4b95f064b64dd7dc2fe250a683f\">3ea245a</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/2488d07e6ed88d879cce6cf69ec276c62d4b21d8\">2488d07</a>\n- <a href=\"https://github.com/mmichie/m28/commit/765490d7bb4175daaeb712ac4766d724970873ad\">765490d</a>\n- <a href=\"https://github.com/mmichie/m28/commit/cf72fa1e3b8b974fe5e9b37f1e8dce9eb342aca8\">cf72fa1</a>\n- <a href=\"https://github.com/mmichie/m28/commit/1ead1daa30753a38049009de8eb9f1ff8ad93492\">1ead1da</a>\n- <a href=\"https://github.com/mmichie/m28/commit/33643be7e7d963d361a746189cbcc7bad0e208c3\">33643be</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/dotfiles/commit/7381879ea0a110895237204871aee0612a380b92\">7381879</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/3ea245a9abedb4b95f064b64dd7dc2fe250a683f\">3ea245a</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/2488d07e6ed88d879cce6cf69ec276c62d4b21d8\">2488d07</a>\n- <a href=\"https://github.com/mmichie/m28/commit/765490d7bb4175daaeb712ac4766d724970873ad\">765490d</a>\n- <a href=\"https://github.com/mmichie/m28/commit/cf72fa1e3b8b974fe5e9b37f1e8dce9eb342aca8\">cf72fa1</a>\n- <a href=\"https://github.com/mmichie/m28/commit/1ead1daa30753a38049009de8eb9f1ff8ad93492\">1ead1da</a>",
     "image": "https://my-badges.github.io/my-badges/sleepy-coder.png"
   },
   {
