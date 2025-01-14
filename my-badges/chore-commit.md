@@ -4,9 +4,11 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/huachuca/commit/b5bdefca9c3af9ed96597e5f2af0961f90045f99">b5bdefc</a>: chore: update module name
+- <a href="https://github.com/mmichie/huachuca/commit/08c0fa25cb14269e9836acca070c418232decdf5">08c0fa2</a>: chore: add Makefile
 
-update go module name to github path
+- Add Makefile for build, test, lint, and other tasks.
+- Includes targets for building, testing, linting, and running the application.
+- Adds support for database migrations and Docker.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
