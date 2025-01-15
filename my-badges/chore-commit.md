@@ -4,11 +4,10 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/huachuca/commit/08c0fa25cb14269e9836acca070c418232decdf5">08c0fa2</a>: chore: add Makefile
+- <a href="https://github.com/mmichie/m28/commit/256326a84a3fd7935fbbc469af7b52e3ced25415">256326a</a>: chore: update .gitignore to exclude bin directory
 
-- Add Makefile for build, test, lint, and other tasks.
-- Includes targets for building, testing, linting, and running the application.
-- Adds support for database migrations and Docker.
+This change adds the 'bin/' directory to the .gitignore file, preventing compiled binaries from
+being tracked by Git.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
