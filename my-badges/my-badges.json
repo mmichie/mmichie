@@ -31,7 +31,7 @@
     "id": "evening-commits",
     "tier": 0,
     "desc": "I commit in the evening.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/dotfiles/commit/c3032294fdb580cd8a830034b3fca44f4492df9f\">c303229</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/8b54fcbd83007953f2331ec3a99cba479c5a84e7\">8b54fcb</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/f6da4e150405d341250b82f3ad3531d0eb7bb1b8\">f6da4e1</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/0c70dbd0e9bc7d235e459916c23e14c1cff6ca09\">0c70dbd</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/72e528c6be70d0b6f2406138b4bfa6888868aed0\">72e528c</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/69c60177dd2c9f0e637f999c1eff6f11476e493d\">69c6017</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/cardsharp/commit/3b85043e962f35c9d44ac8cf09fd00329a8ba17c\">3b85043</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/2c5618da08ea171b51be992d329eeae7faa2b8ad\">2c5618d</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/1ff9b386ef78b75e1bd9b6b06fb499a1d73fa97a\">1ff9b38</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/c3032294fdb580cd8a830034b3fca44f4492df9f\">c303229</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/8b54fcbd83007953f2331ec3a99cba479c5a84e7\">8b54fcb</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/f6da4e150405d341250b82f3ad3531d0eb7bb1b8\">f6da4e1</a>",
     "image": "https://my-badges.github.io/my-badges/evening-commits.png"
   },
   {
@@ -80,7 +80,7 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"add\".",
-    "body": "My favorite commit message words are:\n\n1. add (used 783 times)\n2. function (used 518 times)\n3. update (used 465 times)\n4. new (used 351 times)\n5. implement (used 345 times)",
+    "body": "My favorite commit message words are:\n\n1. add (used 788 times)\n2. function (used 518 times)\n3. update (used 474 times)\n4. new (used 351 times)\n5. implement (used 345 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
@@ -94,7 +94,7 @@
     "id": "cosmetic-commit",
     "tier": 0,
     "desc": "I made cosmetic commit.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/dotfiles/commit/a936dfc74f6afd6369a6adf4c43f54ba0d64ab6f\">a936dfc</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/70507cedd1902478f3465d1c1b10038d54cda66f\">70507ce</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/08087c31f98efe7c81e73777ac300ea627b43ec8\">08087c3</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/9e95a86ce70e7854f6ae986cef3bba17dc391a63\">9e95a86</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/5587ae985b0729470c4375be163066807cbf5083\">5587ae9</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/0cc97fec8b8f79754d9e45e21ce84687e7985bec\">0cc97fe</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/cardsharp/commit/2c5618da08ea171b51be992d329eeae7faa2b8ad\">2c5618d</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/a936dfc74f6afd6369a6adf4c43f54ba0d64ab6f\">a936dfc</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/70507cedd1902478f3465d1c1b10038d54cda66f\">70507ce</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/08087c31f98efe7c81e73777ac300ea627b43ec8\">08087c3</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/9e95a86ce70e7854f6ae986cef3bba17dc391a63\">9e95a86</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/5587ae985b0729470c4375be163066807cbf5083\">5587ae9</a>",
     "image": "https://my-badges.github.io/my-badges/cosmetic-commit.png"
   },
   {
