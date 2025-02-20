@@ -138,5 +138,12 @@
     "desc": "I've starred 2 my own repositories.",
     "body": "- <a href=\"https://github.com/mmichie/fishjelly\">mmichie/fishjelly</a>\n- <a href=\"https://github.com/mmichie/cardsharp\">mmichie/cardsharp</a>",
     "image": "https://my-badges.github.io/my-badges/self-star.png"
+  },
+  {
+    "id": "friday-13",
+    "tier": 0,
+    "desc": "I committed on Friday the 13th, One… By One…",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/cardsharp/commit/c948ac1faddd237c637dcc610629e0815055144b\">c948ac1</a>",
+    "image": "https://my-badges.github.io/my-badges/friday-13.png"
   }
 ]
