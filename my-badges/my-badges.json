@@ -31,7 +31,7 @@
     "id": "evening-commits",
     "tier": 0,
     "desc": "I commit in the evening.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/dotfiles/commit/09b9d778ec113b22083f700b5a3666ee359d8e95\">09b9d77</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/18084ae813f6d09028e57a08741aac938ac47f1d\">18084ae</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/3b85043e962f35c9d44ac8cf09fd00329a8ba17c\">3b85043</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/2c5618da08ea171b51be992d329eeae7faa2b8ad\">2c5618d</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/1ff9b386ef78b75e1bd9b6b06fb499a1d73fa97a\">1ff9b38</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/c3032294fdb580cd8a830034b3fca44f4492df9f\">c303229</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/cardsharp/commit/486a9a247fa18361fdb0dbda6c8b3e5952088466\">486a9a2</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/e513b35874ad0c0f212822af695589adb46d5143\">e513b35</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/09b9d778ec113b22083f700b5a3666ee359d8e95\">09b9d77</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/18084ae813f6d09028e57a08741aac938ac47f1d\">18084ae</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/3b85043e962f35c9d44ac8cf09fd00329a8ba17c\">3b85043</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/2c5618da08ea171b51be992d329eeae7faa2b8ad\">2c5618d</a>",
     "image": "https://my-badges.github.io/my-badges/evening-commits.png"
   },
   {
@@ -80,7 +80,7 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"add\".",
-    "body": "My favorite commit message words are:\n\n1. add (used 792 times)\n2. function (used 522 times)\n3. update (used 483 times)\n4. new (used 351 times)\n5. implement (used 345 times)",
+    "body": "My favorite commit message words are:\n\n1. add (used 792 times)\n2. function (used 522 times)\n3. update (used 496 times)\n4. new (used 351 times)\n5. implement (used 345 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
