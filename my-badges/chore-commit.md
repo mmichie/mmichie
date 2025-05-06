@@ -4,10 +4,9 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/256326a84a3fd7935fbbc469af7b52e3ced25415">256326a</a>: chore: update .gitignore to exclude bin directory
+- <a href="https://github.com/mmichie/m28/commit/9c78eefc75c0b4b98e5f85dd9b434d3add3db473">9c78eef</a>: chore: ignore claude settings
 
-This change adds the 'bin/' directory to the .gitignore file, preventing compiled binaries from
-being tracked by Git.
+Adds **/.claude/settings.local.json to .gitignore
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

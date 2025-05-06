@@ -24,14 +24,14 @@
     "id": "morning-commits",
     "tier": 0,
     "desc": "I commit in the morning.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/cardsharp/commit/21f4143069358c5852c60fa8d7ddfe67306f69ea\">21f4143</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/df2b78e2142c644694487b5f99801eb9c27ad937\">df2b78e</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/5f76b885995a0dd3ea0f03105e410d0a03372675\">5f76b88</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/95d758d146a8b336be5a1a623e5ee8750647475c\">95d758d</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/86cc42d2d0df11fc32c82fd1ba162f793c24c781\">86cc42d</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/f52c4ffeb9df3d1cef4b442d603dca99f2301d05\">f52c4ff</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/482cba4c02e6471074d23c262794fa40e21e4363\">482cba4</a>\n- <a href=\"https://github.com/mmichie/m28/commit/50a9ab5456bfc65b3a545f265d886e78aaaa8f55\">50a9ab5</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/21f4143069358c5852c60fa8d7ddfe67306f69ea\">21f4143</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/df2b78e2142c644694487b5f99801eb9c27ad937\">df2b78e</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/5f76b885995a0dd3ea0f03105e410d0a03372675\">5f76b88</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/95d758d146a8b336be5a1a623e5ee8750647475c\">95d758d</a>",
     "image": "https://my-badges.github.io/my-badges/morning-commits.png"
   },
   {
     "id": "evening-commits",
     "tier": 0,
     "desc": "I commit in the evening.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/intu/commit/3071a234777120c90e713aa67893d9428f9e6c41\">3071a23</a>\n- <a href=\"https://github.com/mmichie/intu/commit/68bbd88923a9e2dce8099b4972144f0b2457ab14\">68bbd88</a>\n- <a href=\"https://github.com/mmichie/intu/commit/70c35716118d5382af5b210a1d00576f9c7ad7ac\">70c3571</a>\n- <a href=\"https://github.com/mmichie/intu/commit/b4d30c1a4406a5ce09e34ae5a7f7d6edac01e07a\">b4d30c1</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/7b14e17d465d0e52d1e9567a8292856dd140c9e4\">7b14e17</a>\n- <a href=\"https://github.com/mmichie/gosh/commit/d51997a9fee129c02a32de2992e50b0fb3062388\">d51997a</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/4506a4f5dac249d1a384474d532aae246c52b419\">4506a4f</a>\n- <a href=\"https://github.com/mmichie/m28/commit/52fde52ae4a4d6974d83a14648106a3f82cf82e9\">52fde52</a>\n- <a href=\"https://github.com/mmichie/m28/commit/6c845a0d000c708b538db0b717ec7c0dd7a44d96\">6c845a0</a>\n- <a href=\"https://github.com/mmichie/m28/commit/6e6f84a837afecc0532286098d26fe1bf381451f\">6e6f84a</a>\n- <a href=\"https://github.com/mmichie/m28/commit/304ba5f64547a64f1326fc11cb6881e703a5ad48\">304ba5f</a>\n- <a href=\"https://github.com/mmichie/m28/commit/3ad395f203bc0641df8d8fec5cff575876242643\">3ad395f</a>",
     "image": "https://my-badges.github.io/my-badges/evening-commits.png"
   },
   {
@@ -66,7 +66,7 @@
     "id": "mass-delete-commit",
     "tier": 1,
     "desc": "When I delete code, I delete a lot.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/26ef7ce43e508ce43fab509c086a9d9b837ebd8b\">26ef7ce</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/2178722f4af8333060e3896d711f715bbbbe4ecd\">2178722</a>",
     "image": "https://my-badges.github.io/my-badges/mass-delete-commit.png"
   },
   {
@@ -80,14 +80,14 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"add\".",
-    "body": "My favorite commit message words are:\n\n1. add (used 855 times)\n2. function (used 544 times)\n3. update (used 509 times)\n4. implement (used 371 times)\n5. new (used 368 times)",
+    "body": "My favorite commit message words are:\n\n1. add (used 950 times)\n2. function (used 578 times)\n3. update (used 539 times)\n4. implement (used 411 times)\n5. new (used 380 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
     "id": "chore-commit",
     "tier": 0,
     "desc": "I did a little housekeeping! 🧹",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/256326a84a3fd7935fbbc469af7b52e3ced25415\">256326a</a>: chore: update .gitignore to exclude bin directory\n\nThis change adds the 'bin/' directory to the .gitignore file, preventing compiled binaries from\nbeing tracked by Git.",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/9c78eefc75c0b4b98e5f85dd9b434d3add3db473\">9c78eef</a>: chore: ignore claude settings\n\nAdds **/.claude/settings.local.json to .gitignore",
     "image": "https://my-badges.github.io/my-badges/chore-commit.png"
   },
   {
@@ -108,7 +108,7 @@
     "id": "fix-2",
     "tier": 1,
     "desc": "I did 2 sequential fixes.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/76180da2732f80fe98174cd439281f78073bf04c\">76180da</a>: fix(builtin): improve integer check and function lookup\n\n- Enhance isInteger function to handle float64 values\n- Add symbol lookup in environment for applyFunc\n- <a href=\"https://github.com/mmichie/m28/commit/e415fb95f562ff4e9eca6c95985824ffd2c6aaee\">e415fb9</a>: fix: improve isNull and assertFunc implementations\n\n- Add nil case handling in isNull function\n- Refactor assertFunc for better readability and consistency",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/6ae72772d5be6210502b24ae5a83b3a6101d6bcb\">6ae7277</a>: Fix more implementation issues in examples\n\n- Changed variable name from test_list to numbers1 in quicksort example\n- Used string root value instead of None in trie implementation\n- <a href=\"https://github.com/mmichie/m28/commit/4c46af4df9fa3e2bfa6cd3db6b851740cef378de\">4c46af4</a>: Fix implementation issues in quicksort and trie examples\n\n- Replaced for loops with while loops in trie.m28\n- Simplified dictionary modification approach in trie implementation\n- Renamed filter to filter-list in quicksort.m28 to avoid conflicts\n- Fixed variable naming conventions using underscores instead of hyphens",
     "image": "https://my-badges.github.io/my-badges/fix-2.png"
   },
   {
@@ -129,7 +129,7 @@
     "id": "sleepy-coder",
     "tier": 0,
     "desc": "I am a sleepy coder.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/dotfiles/commit/7070dcdf7be348bf7d55260dc775e92ad829728e\">7070dcd</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/7381879ea0a110895237204871aee0612a380b92\">7381879</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/3ea245a9abedb4b95f064b64dd7dc2fe250a683f\">3ea245a</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/2488d07e6ed88d879cce6cf69ec276c62d4b21d8\">2488d07</a>\n- <a href=\"https://github.com/mmichie/m28/commit/765490d7bb4175daaeb712ac4766d724970873ad\">765490d</a>\n- <a href=\"https://github.com/mmichie/m28/commit/cf72fa1e3b8b974fe5e9b37f1e8dce9eb342aca8\">cf72fa1</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/634061778acac04ebf6aee12387043815e5ac934\">6340617</a>\n- <a href=\"https://github.com/mmichie/m28/commit/a7e955dd59b97d375275bed0d8c9fbc82eac4dec\">a7e955d</a>\n- <a href=\"https://github.com/mmichie/intu/commit/6b167e62b04a43c75163a2c3c28be56bacb0f265\">6b167e6</a>\n- <a href=\"https://github.com/mmichie/intu/commit/2732e0ff91267cc27f64b1d7679ec457725a0362\">2732e0f</a>\n- <a href=\"https://github.com/mmichie/m28/commit/0d745232fd870a8ad04360795086d808a4a85580\">0d74523</a>\n- <a href=\"https://github.com/mmichie/m28/commit/3674ada51ca9b638dab6e7d8e53a4d9214307d20\">3674ada</a>",
     "image": "https://my-badges.github.io/my-badges/sleepy-coder.png"
   },
   {
