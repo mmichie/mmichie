@@ -31,7 +31,7 @@
     "id": "evening-commits",
     "tier": 0,
     "desc": "I commit in the evening.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/4506a4f5dac249d1a384474d532aae246c52b419\">4506a4f</a>\n- <a href=\"https://github.com/mmichie/m28/commit/52fde52ae4a4d6974d83a14648106a3f82cf82e9\">52fde52</a>\n- <a href=\"https://github.com/mmichie/m28/commit/6c845a0d000c708b538db0b717ec7c0dd7a44d96\">6c845a0</a>\n- <a href=\"https://github.com/mmichie/m28/commit/6e6f84a837afecc0532286098d26fe1bf381451f\">6e6f84a</a>\n- <a href=\"https://github.com/mmichie/m28/commit/304ba5f64547a64f1326fc11cb6881e703a5ad48\">304ba5f</a>\n- <a href=\"https://github.com/mmichie/m28/commit/3ad395f203bc0641df8d8fec5cff575876242643\">3ad395f</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/d8375b23a4d400ec3f376fd76fd53e9df8d19de8\">d8375b2</a>\n- <a href=\"https://github.com/mmichie/m28/commit/4506a4f5dac249d1a384474d532aae246c52b419\">4506a4f</a>\n- <a href=\"https://github.com/mmichie/m28/commit/52fde52ae4a4d6974d83a14648106a3f82cf82e9\">52fde52</a>\n- <a href=\"https://github.com/mmichie/m28/commit/6c845a0d000c708b538db0b717ec7c0dd7a44d96\">6c845a0</a>\n- <a href=\"https://github.com/mmichie/m28/commit/6e6f84a837afecc0532286098d26fe1bf381451f\">6e6f84a</a>\n- <a href=\"https://github.com/mmichie/m28/commit/304ba5f64547a64f1326fc11cb6881e703a5ad48\">304ba5f</a>",
     "image": "https://my-badges.github.io/my-badges/evening-commits.png"
   },
   {
@@ -80,7 +80,7 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"add\".",
-    "body": "My favorite commit message words are:\n\n1. add (used 950 times)\n2. function (used 578 times)\n3. update (used 539 times)\n4. implement (used 411 times)\n5. new (used 380 times)",
+    "body": "My favorite commit message words are:\n\n1. add (used 970 times)\n2. function (used 578 times)\n3. update (used 549 times)\n4. implement (used 430 times)\n5. new (used 380 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
