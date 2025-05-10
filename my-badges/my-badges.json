@@ -80,14 +80,14 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"add\".",
-    "body": "My favorite commit message words are:\n\n1. add (used 982 times)\n2. function (used 578 times)\n3. update (used 557 times)\n4. implement (used 438 times)\n5. new (used 384 times)",
+    "body": "My favorite commit message words are:\n\n1. add (used 988 times)\n2. function (used 580 times)\n3. update (used 562 times)\n4. implement (used 450 times)\n5. new (used 388 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
     "id": "chore-commit",
     "tier": 0,
     "desc": "I did a little housekeeping! 🧹",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/9c78eefc75c0b4b98e5f85dd9b434d3add3db473\">9c78eef</a>: chore: ignore claude settings\n\nAdds **/.claude/settings.local.json to .gitignore",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/6122e98ecccc11babc67252088aaad661fd03704\">6122e98</a>: chore: remove obsolete cleanup and test scripts\n\n- Removed `cleanup_examples.sh` as examples are now organized.\n- Removed `run-all-tests.sh` as it's redundant with `run-tests.sh`.",
     "image": "https://my-badges.github.io/my-badges/chore-commit.png"
   },
   {

@@ -4,9 +4,10 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/9c78eefc75c0b4b98e5f85dd9b434d3add3db473">9c78eef</a>: chore: ignore claude settings
+- <a href="https://github.com/mmichie/m28/commit/6122e98ecccc11babc67252088aaad661fd03704">6122e98</a>: chore: remove obsolete cleanup and test scripts
 
-Adds **/.claude/settings.local.json to .gitignore
+- Removed `cleanup_examples.sh` as examples are now organized.
+- Removed `run-all-tests.sh` as it's redundant with `run-tests.sh`.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
