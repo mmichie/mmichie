@@ -31,7 +31,7 @@
     "id": "evening-commits",
     "tier": 0,
     "desc": "I commit in the evening.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/cardsharp/commit/801611833e9bd07341c407e391871cfe9da8dd04\">8016118</a>\n- <a href=\"https://github.com/mmichie/m28/commit/3f6d53943171814929471f80ae90d7ea15345de8\">3f6d539</a>\n- <a href=\"https://github.com/mmichie/m28/commit/f562f7228c637f7658f374e51438ba48a7c8f57b\">f562f72</a>\n- <a href=\"https://github.com/mmichie/m28/commit/d8375b23a4d400ec3f376fd76fd53e9df8d19de8\">d8375b2</a>\n- <a href=\"https://github.com/mmichie/m28/commit/4506a4f5dac249d1a384474d532aae246c52b419\">4506a4f</a>\n- <a href=\"https://github.com/mmichie/m28/commit/52fde52ae4a4d6974d83a14648106a3f82cf82e9\">52fde52</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/cardsharp/commit/e89a170e3947fe9adad7bacbebd7aa368695c11f\">e89a170</a>\n- <a href=\"https://github.com/mmichie/cardsharp/commit/77c1cbd4b1e47eaff6c0a998056a51b9c825b5c5\">77c1cbd</a>\n- <a href=\"https://github.com/mmichie/gosh/commit/fad047b68072df27a7d51fda49883db44ba4cc21\">fad047b</a>\n- <a href=\"https://github.com/mmichie/gosh/commit/ea4cd20edf5469ad3af5ce97dd4f889d3826936c\">ea4cd20</a>\n- <a href=\"https://github.com/mmichie/gosh/commit/614089435450d6ccf7976e49756e50c387e8bfb1\">6140894</a>\n- <a href=\"https://github.com/mmichie/gosh/commit/0fb0c710a711fdf721abf9983b75a62a57660cfd\">0fb0c71</a>",
     "image": "https://my-badges.github.io/my-badges/evening-commits.png"
   },
   {
@@ -80,7 +80,7 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"add\".",
-    "body": "My favorite commit message words are:\n\n1. add (used 1010 times)\n2. function (used 580 times)\n3. update (used 569 times)\n4. implement (used 463 times)\n5. new (used 390 times)",
+    "body": "My favorite commit message words are:\n\n1. add (used 1052 times)\n2. update (used 581 times)\n3. function (used 580 times)\n4. implement (used 483 times)\n5. new (used 396 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
@@ -145,5 +145,12 @@
     "desc": "I committed on Friday the 13th, One… By One…",
     "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/cardsharp/commit/c948ac1faddd237c637dcc610629e0815055144b\">c948ac1</a>",
     "image": "https://my-badges.github.io/my-badges/friday-13.png"
+  },
+  {
+    "id": "fix-3",
+    "tier": 2,
+    "desc": "I did 3 sequential fixes.",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/cardsharp/commit/77c1cbd4b1e47eaff6c0a998056a51b9c825b5c5\">77c1cbd</a>: fix: handle edge cases in surrender logic\n\n- Only force surrender actions if allowed by rules and is a valid action.\n- Verify surrender payouts only if surrender is allowed in the rules.\n- Warn if surrender action is recorded but not allowed by the rules.\n- <a href=\"https://github.com/mmichie/cardsharp/commit/917023392c152bfa23f1f5d8e304316f4104add4\">9170233</a>: fix: enhance surrender payout verification\n\n- Add support for testing odd-numbered bets to verify accurate surrender payouts.\n- Improve surrender payout validation by checking for floating-point precision and adding detailed error messages.\n- Force surrender actions more frequently during testing to increase test coverage.\n- Add summary report for surrender test results, including odd-bet verification status.\n- Bump version to 0.5.0.\n- <a href=\"https://github.com/mmichie/cardsharp/commit/a887e452caf9fe05b8af8424f15dec285211f65e\">a887e45</a>: fix(blackjack): handle surrender with odd bets\n\n- Use floating-point division when calculating surrender amount.\n- Add tests for surrender with odd bet amounts.",
+    "image": "https://my-badges.github.io/my-badges/fix-3.png"
   }
 ]
