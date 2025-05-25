@@ -4,10 +4,7 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/6122e98ecccc11babc67252088aaad661fd03704">6122e98</a>: chore: remove obsolete cleanup and test scripts
-
-- Removed `cleanup_examples.sh` as examples are now organized.
-- Removed `run-all-tests.sh` as it's redundant with `run-tests.sh`.
+- <a href="https://github.com/mmichie/m28/commit/69a33dfd4d7fd47226af91e92df65fdc0b7c0bb9">69a33df</a>: chore: Clean up leftover test files
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
