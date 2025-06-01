@@ -4,16 +4,21 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/6ae72772d5be6210502b24ae5a83b3a6101d6bcb">6ae7277</a>: Fix more implementation issues in examples
+- <a href="https://github.com/mmichie/m28/commit/39bfb9867cf57dd6bf9ed626294395ba6b789755">39bfb98</a>: fix: Make 'in' operator check dictionary keys correctly
 
-- Changed variable name from test_list to numbers1 in quicksort example
-- Used string root value instead of None in trie implementation
-- <a href="https://github.com/mmichie/m28/commit/4c46af4df9fa3e2bfa6cd3db6b851740cef378de">4c46af4</a>: Fix implementation issues in quicksort and trie examples
+- Update InFunc to use ValueToKey for proper key comparison
+- Now supports all hashable types as dictionary keys (strings, numbers, bools, tuples)
+- Document known issue with empty literals in class __init__ methods
+- <a href="https://github.com/mmichie/m28/commit/f5375639b799fdc5c1c11ba714d8f690b70c06ea">f537563</a>: fix: Support class variables and fix example code for M28 compatibility
 
-- Replaced for loops with while loops in trie.m28
-- Simplified dictionary modification approach in trie implementation
-- Renamed filter to filter-list in quicksort.m28 to avoid conflicts
-- Fixed variable naming conventions using underscores instead of hyphens
+- Add SetAttr method to Class type for class variable assignment
+- Support = form in class definitions for class variables (per CLAUDE.md)
+- Fix conditionals.m28: correct elif syntax, replace lambda/any with loops
+- Fix exceptions.m28: adapt to M28's simpler exception syntax
+- Fix class examples: correct default params, comment out unsupported features
+- Fix calculator.m28: use (list) instead of [] in class __init__
+- Remove parentheses from property access in module examples
+- Improve example success rate from 48% to 65.6%
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
