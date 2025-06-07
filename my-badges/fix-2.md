@@ -4,42 +4,28 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/775c3672c34eb9a184af5a918ceeb0a05cc5388b">775c367</a>: fix: Fix context manager to support inline expressions in with statements
+- <a href="https://github.com/mmichie/m28/commit/c71d36c2932095ab24d03eb823975ebc47c79c3d">c71d36c</a>: fix: Fix module import hang and update all tests to current M28 syntax
 
-The with statement now correctly handles inline function calls like:
-  (with (open "file.txt" "r") as f ...)
+- Add circular import detection to prevent infinite recursion
+- Fix dictionary dot notation (dict.property) by handling key prefixes
+- Update import syntax from ':as' to 'as' to avoid parser issues
+- Fix duplicate dict() function definition in builtin.go
+- Update all tests to use == for comparisons instead of =
+- Fix function definitions and exports syntax in tests
+- Implement __exports__ support in module loader
+- All 10 tests now pass (previously only 3 passed)
 
-Previously, this would incorrectly parse the function call as a list of
-multiple context managers, resulting in "'function' object does not
-support the context manager protocol" error.
+The module system now properly handles circular dependencies and supports
+dot notation for accessing module members.
+- <a href="https://github.com/mmichie/m28/commit/4c2f383703b6395c022a8b8920683d229b6539ee">4c2f383</a>: fix: Fix closures_decorators.m28 example to work correctly
 
-The fix adds logic to distinguish between:
-- Function call lists: (open "file" "r")
-- Multiple manager lists: [mgr1 as var1 mgr2 as var2]
+- Add top-level time import so lambdas can access time.sleep
+  - Previously failed because time was only imported inside decorator scope
+- Fix closure variable mutation in make_counter and count_calls
+  - Use mutable containers (dicts) to store state
+  - Direct assignment to closure variables creates new local variables
 
-Uses a heuristic that checks for 'as' keywords in positions 1-2 to
-determine if a list represents multiple managers.
-
-File I/O examples now work with context managers, though some still
-fail due to missing methods (writelines) or iteration support.
-- <a href="https://github.com/mmichie/m28/commit/4a6dcd3fbfab01fb814a8d166a6d9df047fa1078">4a6dcd3</a>: fix: Fix syntax errors in examples and document interpreter limitations
-
-- Add detailed interpreter fixes needed to ROADMAP.md:
-  - Context manager protocol for file objects
-  - __name__ attribute for functions and types
-  - Tuple unpacking in for loops
-  - Local module import resolution
-  - Missing Python stdlib modules (shutil, pathlib, tempfile, zipfile, time)
-
-- Fix syntax errors in 7 example files:
-  - map_filter_reduce.m28: Fix missing parentheses and undefined infinity
-  - dice_game.m28: Change 'do' to 'begin'
-  - random_examples.m28: Fix for loop syntax and method calls
-  - todo_app.m28: Fix method call syntax and dictionary access
-  - text_adventure.m28: Fix lambda syntax, slice usage, remove __name__ check
-  - functional_basics.m28: Comment out timer decorator, fix sorted usage
-
-Examples now parse correctly and run until hitting interpreter limitations.
+Now all M28 examples work correctly (100% success rate).
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
