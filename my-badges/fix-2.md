@@ -4,28 +4,28 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/c71d36c2932095ab24d03eb823975ebc47c79c3d">c71d36c</a>: fix: Fix module import hang and update all tests to current M28 syntax
+- <a href="https://github.com/mmichie/m28/commit/1d4c7435fef690263ae15472f71815aaa427e9aa">1d4c743</a>: fix: allow objects with just GetAttr method to use dot notation
 
-- Add circular import detection to prevent infinite recursion
-- Fix dictionary dot notation (dict.property) by handling key prefixes
-- Update import syntax from ':as' to 'as' to avoid parser issues
-- Fix duplicate dict() function definition in builtin.go
-- Update all tests to use == for comparisons instead of =
-- Fix function definitions and exports syntax in tests
-- Implement __exports__ support in module loader
-- All 10 tests now pass (previously only 3 passed)
+- Modified eval/dot_notation.go to check for both full Object interface
+  and objects that only implement GetAttr method
+- Added comprehensive tests for number dunder methods
+- Added tests for arithmetic operator edge cases including division by zero
+  and type errors
 
-The module system now properly handles circular dependencies and supports
-dot notation for accessing module members.
-- <a href="https://github.com/mmichie/m28/commit/4c2f383703b6395c022a8b8920683d229b6539ee">4c2f383</a>: fix: Fix closures_decorators.m28 example to work correctly
+This fix enables dot notation access for types that implement GetAttr
+without requiring the full Object interface.
+- <a href="https://github.com/mmichie/m28/commit/aadf8edf5206f03cd36880f8cd6de5bc40fbde97">aadf8ed</a>: fix: correct variadic arithmetic operations with operator overloading
 
-- Add top-level time import so lambdas can access time.sleep
-  - Previously failed because time was only imported inside decorator scope
-- Fix closure variable mutation in make_counter and count_calls
-  - Use mutable containers (dicts) to store state
-  - Direct assignment to closure variables creates new local variables
+- Fixed bug where (+ a b 1) returned 3 instead of 4
+- Issue was that __add__ method was being used for built-in number types
+- Now built-in types (NumberValue, StringValue, ListValue) use optimized fast paths
+- Operator overloading only used for custom objects that define dunder methods
+- Applied defensive fixes to all arithmetic operators (-, *, /) to prevent future issues
+- Added comprehensive tests for variadic operations and operator overloading
+- Updated ROADMAP to note that only __add__ is currently registered for numbers
 
-Now all M28 examples work correctly (100% success rate).
+This ensures arithmetic operations work correctly for both regular operations
+and custom classes with operator overloading.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
