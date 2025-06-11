@@ -4,17 +4,11 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/83f4959bf693dd5c7c525d18657d7dd91ee2ca89">83f4959</a>: chore: Prepare for v0.1.0 release
+- <a href="https://github.com/mmichie/m28/commit/eb6cf06441a701ec9eeecf4e7c42a487e46c149c">eb6cf06</a>: chore: apply automatic formatting from make fmt
 
-- Add CHANGELOG.md documenting initial release features
-- Add VERSION file set to 0.1.0
-- Update README.md with version badge
-- All tests passing (10/10)
-- Most examples working (28/33, with 5 requiring specific setup)
-- Code formatted with go fmt
-
-This marks the first public release of M28, a Lispy-Pythonic
-programming language ready for educational use and small projects.
+Apply whitespace and formatting changes from running make fmt
+after the previous commit. These are automatic formatting adjustments
+to maintain code style consistency.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
