@@ -4,11 +4,11 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/eb6cf06441a701ec9eeecf4e7c42a487e46c149c">eb6cf06</a>: chore: apply automatic formatting from make fmt
+- <a href="https://github.com/mmichie/m28/commit/419b60069980a4b68545ab8cb7235978e72d6a24">419b600</a>: chore: remove obsolete fix_imports.sh script
 
-Apply whitespace and formatting changes from running make fmt
-after the previous commit. These are automatic formatting adjustments
-to maintain code style consistency.
+Script was used for migrating old import paths from "m28/" to
+"github.com/mmichie/m28/" but is no longer needed as all imports
+have been updated.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
