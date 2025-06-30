@@ -4,43 +4,32 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/2a2c4dbc1711d046309a051b7803746eb89a4468">2a2c4db</a>: fix: complete Phase 3 of builtin cleanup - eliminate all remaining duplicates
+- <a href="https://github.com/mmichie/m28/commit/d977bde301a0cc77f0ce807cd98ee410ca6bbf6d">d977bde</a>: fix: simplify embed package to use Context directly
 
-- Removed all 19 remaining duplicate function registrations
-- Math functions: removed duplicates from modules/math.go, kept in numeric.go
-- Attribute functions: removed from attributes.go, kept better implementations in essential_builtins.go
-- Collection/iteration: consolidated to proper locations (iteration.go, list.go, collections.go)
-- Utilities: removed duplicates from essential_builtins.go and utilities.go
-- Fixed import issues and removed unused code
-- All tests pass successfully
+- Remove Environment usage in favor of Context-only approach
+- Fix GetValue to use ctx.Lookup instead of non-existent Get method
+- This properly connects builtins to the evaluation context
 
-This completes the builtin system cleanup:
-- Total builtins reduced from 110 to 69
-- All 41 duplicate registrations eliminated
-- Each function now has a single source of truth
-- Code is much cleaner and easier to maintain
-- <a href="https://github.com/mmichie/m28/commit/d7d20530e7047cd0dc99f28ed8e3191cda916893">d7d2053</a>: fix: complete Phase 2 of builtin cleanup - consolidate map, filter, reduce
+The embed package now works correctly for embedded M28 evaluation.
+- <a href="https://github.com/mmichie/m28/commit/e1dbf81203e092a6c22d64bc15c6e4177e99edb4">e1dbf81</a>: fix: properly initialize and use context in embed package
 
-- Consolidated map, filter, reduce functions to functional.go
-- Used best implementations: map from utilities.go (better error messages),
-  filter from functional.go (supports None), reduce from list.go (supports both argument orders)
-- Removed duplicate registrations from list.go and utilities.go
-- Eliminated 6 duplicate registrations (3 functions × 2 extra registrations each)
-- All tests pass successfully
-- Updated ROADMAP.md to mark Phase 2 as complete
-- Updated DUPLICATE_BUILTINS_REPORT.md with current state
+- Store the initialized context with builtins in M28Engine
+- Initialize basic values (true, false, nil) before registering builtins
+- Use child context for evaluation to avoid polluting global state
+- Register shell functions in context instead of environment
+- Fix SetupBuiltins to be a no-op for backward compatibility
 
-This reduces total builtins from 94 to 88 and duplicate registrations from 25 to 19.
-- <a href="https://github.com/mmichie/m28/commit/a4eba1fb630effb77c7ae4e2231423697e79af31">a4eba1f</a>: fix: complete Phase 1 of builtin system cleanup - remove operator duplicates
+This fixes the duplicate registration error and properly connects
+builtins to the evaluation context.
+- <a href="https://github.com/mmichie/m28/commit/f99e6fe67b3c24bf7df21bc60827cd5188299018">f99e6fe</a>: fix: remove duplicate builtin registration in embed package
 
-- Removed legacy arithmetic.go and comparison.go files
-- Eliminated 16 duplicate operator registrations (+, -, *, /, %, **, ==, \!=, <, >, <=, >=, and, or, not, in)
-- Updated registry.go to only use the new modular operators/ structure
-- All tests pass successfully
-- Updated ROADMAP.md to mark Phase 1 as complete
-- Updated DUPLICATE_BUILTINS_REPORT.md with current state
+The embed package was calling both environment.SetupBuiltins() and
+RegisterAllBuiltins(), causing duplicate registrations in the global
+builtin registry. Since SetupBuiltins() creates a throwaway context
+that's never used, we remove this call and only keep the direct
+RegisterAllBuiltins() call with the proper context.
 
-This reduces total builtins from 110 to 94 and duplicate registrations from 41 to 25.
+This fixes the 'iter already registered' error in gosh.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
