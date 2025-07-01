@@ -4,11 +4,13 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/495b5839fad1712a82eafa6d6bd9748cf5e256b1">495b583</a>: chore: remove obsolete comma list patch file
+- <a href="https://github.com/mmichie/m28/commit/a57a0548e72feef43957ddf3235fc4daae273ebb">a57a054</a>: chore: remove GETATTR_REFACTORING.md and update roadmap
 
-This patch was for an old issue with comma-separated list syntax that
-has since been fixed. The syntax now works correctly without any special
-handling.
+- Remove GETATTR_REFACTORING.md as the refactoring is complete
+- Update ROADMAP.md to mark GetAttr deduplication as completed
+- Note that 10 types were successfully refactored with 40-50% code reduction
+- The refactoring pattern is now established and can be documented
+  separately if needed for future contributors
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
