@@ -4,13 +4,16 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/a57a0548e72feef43957ddf3235fc4daae273ebb">a57a054</a>: chore: remove GETATTR_REFACTORING.md and update roadmap
+- <a href="https://github.com/mmichie/m28/commit/144fa87d9bb892f1667e82b02a96e29c7bd56374">144fa87</a>: chore: clean up debug code and replace panic() with proper error handling
 
-- Remove GETATTR_REFACTORING.md as the refactoring is complete
-- Update ROADMAP.md to mark GetAttr deduplication as completed
-- Note that 10 types were successfully refactored with 40-50% code reduction
-- The refactoring pattern is now established and can be documented
-  separately if needed for future contributors
+- Removed commented debug print statements from parser/parser.go
+- Replaced panic() with log.Fatal() in initialization functions:
+  - core/list_methods.go: InitListMethods()
+  - core/dict_methods.go: InitDictMethods()
+  - core/set_methods.go: InitSetMethods()
+- Removed unused getNumber() function from builtin/utilities.go
+- Left intentional panic() calls in Must* pattern functions (following Go conventions)
+- Left controlled panic() in eval/evaluator.go (only triggers when StrictDuplicateChecking is enabled)
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
