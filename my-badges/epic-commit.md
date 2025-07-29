@@ -162,6 +162,12 @@ Commits:
 - <a href="https://github.com/mmichie/rustyhook/commit/b81d5d0e6739aede8269d87003b1a7e3656a3262">b81d5d0</a>
 - <a href="https://github.com/mmichie/rustyhook/commit/62a9837347d0ceaaab1c3e6284857dc898eb4cae">62a9837</a>
 - <a href="https://github.com/mmichie/rustyhook/commit/f24da1ae923192276e6d431ba5249013b7d09a06">f24da1a</a>
+- <a href="https://github.com/mmichie/cardsharp/commit/b1b067ac2c68235281115c633fee5c8dcbdc75d0">b1b067a</a>
+- <a href="https://github.com/mmichie/cardsharp/commit/9fc12eaea2f2481f86590dd69fe6f7523288355f">9fc12ea</a>
+- <a href="https://github.com/mmichie/cardsharp/commit/57d4077f27cf49b7f249bddbf62f14ff6f9097bf">57d4077</a>
+- <a href="https://github.com/mmichie/cardsharp/commit/4540b6652da8eebea070842da673dedbc4738f96">4540b66</a>
+- <a href="https://github.com/mmichie/cardsharp/commit/34bacb60af43fbf8f90a2e0ffde35555163bab39">34bacb6</a>
+- <a href="https://github.com/mmichie/cardsharp/commit/89f408e89475d912ad2bfc4af71587612027bf84">89f408e</a>
 - <a href="https://github.com/mmichie/cardsharp/commit/b5124617a3c575716fd0b8a9930845e649be5a63">b512461</a>
 - <a href="https://github.com/mmichie/cardsharp/commit/4885dc7b7231f142d531614bab97adece0c579f3">4885dc7</a>
 - <a href="https://github.com/mmichie/cardsharp/commit/3eb1e196bbb4b6c63abb5c32d4034a5b9cdd5d79">3eb1e19</a>
