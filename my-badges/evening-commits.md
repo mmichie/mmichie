@@ -4,12 +4,12 @@
 
 Commits:
 
+- <a href="https://github.com/mmichie/dotfiles/commit/920a1ad0af1ffe06c06c15380a714de12b75d35c">920a1ad</a>
 - <a href="https://github.com/mmichie/dotfiles/commit/1e7627844c39ce65ea65e083754ea8668a7c20fc">1e76278</a>
 - <a href="https://github.com/mmichie/dotfiles/commit/5abbcb406fe5a34c405829b7cc7ae087c885d573">5abbcb4</a>
 - <a href="https://github.com/mmichie/dotfiles/commit/cd46ee981b6fcc2c4f6b177b394b29a61c568d5e">cd46ee9</a>
 - <a href="https://github.com/mmichie/dotfiles/commit/8b4a769a0a4943ff12cc3837563ae90bf1d304db">8b4a769</a>
 - <a href="https://github.com/mmichie/dotfiles/commit/6d68395f2b59549ddf8236b9684876faa64c6383">6d68395</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/2d8913d703426592fddbb8d38a0535e1969a9f29">2d8913d</a>
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
