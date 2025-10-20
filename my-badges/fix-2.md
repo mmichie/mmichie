@@ -4,40 +4,62 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/58cc1266a2e6ac93cc66186848218115fa819e5d">58cc126</a>: fix: correct syntax in sstring and macro tests
+- <a href="https://github.com/mmichie/m28/commit/4a7e48a227d9c91e0190b2f9d014946e4339e718">4a7e48a</a>: fix: add bytes/bytearray iteration support and fix iter() comparison bug
 
-Both features were implemented but tests used wrong syntax:
+Problem 1: iter() panicked with "comparing uncomparable type core.ListValue"
+Root cause: Using == to compare values, which fails for slice types like ListValue
 
-sstring-simple.m28:
-- Replace 'quote syntax with string (M28 doesn't support ')
-- Remove eval call (not implemented)
-- Fix assertions to properly check s-string output
+Problem 2: bytes and bytearray were not iterable
+Root cause: No iterator implementations in protocols package
 
-test_macros_basic.m28:
-- Replace @macro with macro (correct decorator name)
-- Simplify tests to avoid complex quote scenarios
-- Fix print statements to use (print ...) syntax
-- Fix assert comparisons to use ==
-- Use True instead of true
+Solutions:
+1. Removed unsafe == comparison in iter()
+   - Instead of checking `if iter == obj`, check if returned value has __next__
+   - This avoids comparing uncomparable types like slices
 
-Both tests now pass completely.
-- <a href="https://github.com/mmichie/m28/commit/6459b90323873afdbdbee40cc8a998a1cadbc3fe">6459b90</a>: fix: add -> and ->> tokenization, fix test file syntax errors
+2. Added BytesIterator and ByteArrayIterator
+   - Implemented in core/protocols/iterable.go
+   - Returns each byte as a NumberValue (Python behavior)
+   - Added to GetIterableOps switch statement
 
-Tokenizer changes:
-- Recognize -> and ->> as single identifiers for threading macros
-- Previously tokenized as separate - and > tokens, causing errors
+Changes:
+- builtin/iteration_protocol.go: Removed problematic == comparison
+- core/protocols/iterable.go: Added BytesIterator, ByteArrayIterator
+- core/protocols/iterable.go: Updated GetIterableOps to handle bytes types
 
-Test file fixes:
-- test-jsonl.m28: Remove extra quote, use 'in' instead of str-contains?, use string arg instead of :keyword
-- break-continue-test.m28: Replace 'def' with '=' for variable assignments (12 occurrences)
+Impact:
+- iter([1,2,3]) now works without panic
+- iter(b"hello") now returns <bytes_iterator>
+- iter(bytearray()) now returns <bytearray_iterator>
+- _collections_abc.py progresses further (new error: "class has no attribute 'register'")
 
-These fixes enable:
-- test-dict-ops.m28 (now passing)
-- test-merge-ops.m28 (now passing)
-- test-jsonl.m28 (now passing)
-- break-continue-test.m28 (now passing)
+All 54 tests passing.
+- <a href="https://github.com/mmichie/m28/commit/c27b3305c4a131fd80c142ec7167acda7e5b8fb7">c27b330</a>: fix: convert type from builtin function to inheritable metaclass
 
-All 42 tests still passing (100%)
+Problem: Python code `class ABCMeta(type):` failed with error:
+"parent must be a class, got *core.BuiltinFunction"
+
+Root cause: type was implemented as a BuiltinFunction, which cannot
+be used as a base class for metaclasses.
+
+Solution: Created TypeType wrapper (similar to StrType, DictType) that:
+1. Wraps *core.Class to support inheritance
+2. Implements Call() to provide type() function behavior
+3. Implements GetClass() to return the class for inheritance
+
+Changes:
+- Added TypeType struct with embedded *core.Class
+- Implemented Call() for type(obj) and type(name, bases, dict) forms
+- Implemented GetClass() to support class inheritance
+- Updated RegisterTypes to use TypeType instead of BuiltinFunction
+
+Impact:
+- type(obj) still works correctly to get object types
+- class Meta(type): now works for creating metaclasses
+- _py_abc.ABCMeta(type) loads successfully
+- unittest import progresses further (new error: "error in iter")
+
+All 54 tests passing.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

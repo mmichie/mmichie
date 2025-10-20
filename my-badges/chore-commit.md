@@ -4,16 +4,16 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/144fa87d9bb892f1667e82b02a96e29c7bd56374">144fa87</a>: chore: clean up debug code and replace panic() with proper error handling
+- <a href="https://github.com/mmichie/m28/commit/4a852cdf70c70561b1c8be171078537e1d1f7664">4a852cd</a>: chore: remove debug output after fixing comprehension bugs
 
-- Removed commented debug print statements from parser/parser.go
-- Replaced panic() with log.Fatal() in initialization functions:
-  - core/list_methods.go: InitListMethods()
-  - core/dict_methods.go: InitDictMethods()
-  - core/set_methods.go: InitSetMethods()
-- Removed unused getNumber() function from builtin/utilities.go
-- Left intentional panic() calls in Must* pattern functions (following Go conventions)
-- Left controlled panic() in eval/evaluator.go (only triggers when StrictDuplicateChecking is enabled)
+Remove DEBUG_GLOBALS, DEBUG_COMP, and types module debug output
+that was added during investigation. The root issues have been
+fixed and the debug code is no longer needed.
+
+Files cleaned:
+- builtin/misc.go: removed DEBUG_GLOBALS output and unused os import
+- eval/evaluator.go: removed DEBUG_COMP output and unused os import
+- modules/python_loader.go: removed types module debug output
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
