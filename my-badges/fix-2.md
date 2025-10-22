@@ -4,31 +4,20 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/388989963d0bec19eaceb6dd41d3e9cc9efdd79b">3889899</a>: fix: improve Python module import compatibility
+- <a href="https://github.com/mmichie/m28/commit/4d6fc12fb5507cbf9167cc7a33155eb5625e59c1">4d6fc12</a>: fix: allow super() to find methods in root metaclass
 
-- Add raw bytes string (br/rb) support in tokenizer
-- Fix module exports to include underscore-prefixed names
-- Add sys.platform attribute using runtime.GOOS
-- Update dict-literal to handle wrapped pairs from kwargs
-- Improve lru_cache decorator to support parameterized syntax
+- Modified Super.GetAttr to check s.Class itself when it has no parents
+- Fixes super().__new__() calls in metaclasses that inherit from type
+- type is the root metaclass with no parent, but has __new__ method
+- Allows abc.ABCMeta and other metaclasses to call super().__new__()
+- Resolves 'super has no attribute __new__' error in metaclass creation
+- <a href="https://github.com/mmichie/m28/commit/4275dc5fc539bbb879488fbb51a5c1430ea3bc9b">4275dc5</a>: fix: bind instance to methods returned by super().GetAttr
 
-This enables fnmatch and other stdlib modules to parse successfully.
-Remaining work: Handle **kwargs marker in function call evaluation.
-- <a href="https://github.com/mmichie/m28/commit/9b82e67c45252d1ae6420df7845375e87d57547b">9b82e67</a>: fix: correct Class.__eq__ for protocol dispatch and fix test type comparisons
-
-Core type system fixes:
-- Fix Class.__eq__ and __ne__ to expect 1 argument (protocol dispatch)
-- Compare classes by name instead of pointer equality
-- Handle type wrappers (StrType, TypeType) via GetClass() interface
-- Ensure (type x) == (type y) works correctly across instances
-
-Test fixes:
-- Replace type(x) == "string" with type(x) == type("")
-- Update all type comparisons in dict-ops, merge-ops, and bytes tests
-- Get type objects once and reuse for consistent comparisons
-
-These changes fix the remaining 5 test failures, bringing test success rate
-from 90% to 100% (54/54 tests passing).
+- Modified Super.GetAttr to bind methods to instance using BoundInstanceMethod
+- Removed incorrect check in s.Class itself (super should skip current class)
+- Now super().__init__() correctly passes self to parent __init__
+- Fixes 'missing required argument: self' error in unittest.loader
+- Matches Python behavior where super() methods are auto-bound
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
