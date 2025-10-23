@@ -4,64 +4,44 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/cc19e46052c140cbd2b87c971af6db1aca414709">cc19e46</a>: fix: handle comments and dotted decorators in Python parser
+- <a href="https://github.com/mmichie/m28/commit/1f518e9e4a0d05bbabdf0c0406b5527e5aba6e0d">1f518e9</a>: fix: support conditional method definitions at class level
 
-Two fixes to improve Python module compatibility:
+Class body improvements:
+- Handle `if` statements at class level to capture conditional method definitions
+- Methods defined inside `if` blocks at class level now properly added to the class
+- This fixes threading.py where `_set_native_id` is conditionally defined
 
-1. Python tokenizer now handles '#' comments in scanToken()
-   - Comments can appear anywhere, not just at line start
-   - Fixes tokenization of files with inline comments
-   - Previously caused "unexpected character '#'" errors
+Weakref module enhancements:
+- Add getweakrefcount() and getweakrefs() functions
+- Add ReferenceType, ProxyType, CallableProxyType classes
+- Add _remove_dead_weakref() internal function
+- These additions improve weakref module compatibility
 
-2. Parser now supports dotted decorator names
-   - Handles decorators like @contextlib.contextmanager
-   - Uses parseAttribute() to handle dot notation after decorator name
-   - Previously only supported single-identifier decorators
+This change enables CPython's threading.py to progress much further
+during import, though some issues remain with function __hash__ support.
+- <a href="https://github.com/mmichie/m28/commit/ce98698645b98f3fa47f114d1d4a58a96bcfea85">ce98698</a>: fix: fix ThreadLock deadlock and improve set mutating methods
 
-These fixes allow importing more Python stdlib modules including
-those using contextlib decorators and inline comments.
-- <a href="https://github.com/mmichie/m28/commit/c4fa3582e850f25efa03e309421ea12ab4882f83">c4fa358</a>: fix: support multi-line imports with parentheses
+Threading improvements:
+- Fix ThreadLock.__enter__ deadlock by adding missing mutex unlock
+- Add _HAVE_THREAD_NATIVE_ID constant to _thread module
 
-The parser was failing on Python imports like:
-  from module import (name1, name2,
-                       name3, name4)
+Set method fixes:
+- Fix set.add(), remove(), discard(), pop(), clear() to mutate in-place
+- Add missing mutating methods: update(), difference_update(),
+  intersection_update(), symmetric_difference_update()
+- Support iterables (not just sets) in update methods for Python compatibility
 
-This is a common pattern in Python stdlib (e.g., abc.py) for
-organizing long import lists across multiple lines.
+These changes fix the threading module deadlock and improve CPython
+standard library compatibility, particularly for WeakSet operations.
+- <a href="https://github.com/mmichie/m28/commit/7c1e7c97f79b92844efeb1e9f7e211142fcce6ee">7c1e7c9</a>: fix: list.pop() raises IndexError when empty instead of generic error
 
-Changes:
-- parseFromImportStatement now detects and handles LPAREN after import
-- Skips NEWLINE tokens between names when inside parentheses
-- Supports trailing commas in parenthesized import lists
-- Added recursion depth and call count tracking to detect infinite loops
-- Added enterParse/exitParse instrumentation for debugging
+Changed list.pop() on empty list to raise IndexError(-1, 0) instead of
+generic error. This fixes Python code that catches IndexError, particularly
+WeakSet._commit_removals() which uses try/except IndexError to detect
+empty list.
 
-This fix resolves the parser hang when importing abc.py and similar
-stdlib modules that use multi-line imports.
-- <a href="https://github.com/mmichie/m28/commit/88ca8294420144eb4d4f037af5e439d59cc49ab3">88ca829</a>: fix: expand C extension detection and document parser limitations
-
-Add missing built-in C extensions to detection list to prevent import
-attempts that would fail:
-- _weakref (weak reference support, built-in)
-- _abc (abstract base class support)
-- sys (system functions, built-in)
-- builtins (built-in functions)
-
-Document known limitations in ROADMAP.md:
-- Parser hangs on some stdlib modules (abc.py, typing.py)
-  - Root cause: Infinite loop in parser, needs timeout/recursion limits
-  - Discovered during abc import testing
-- C extension dependency chains common in stdlib
-  - Example: abc → _py_abc → _weakrefset → _weakref
-  - Even "pure Python" modules often have transitive C dependencies
-
-Document what currently works:
-- Pure Python modules without C deps (keyword module ✓)
-- Custom .py files with classes, decorators, f-strings ✓
-- Simple control flow and functions ✓
-
-This prevents the hang that occurred when importing modules with C extension
-chains, replacing it with clear error messages.
+This allows threading module to initialize successfully - test_bool.py
+now loads all imports without errors (though it hangs during execution).
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
