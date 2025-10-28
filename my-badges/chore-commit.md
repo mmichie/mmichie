@@ -4,16 +4,10 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/4a852cdf70c70561b1c8be171078537e1d1f7664">4a852cd</a>: chore: remove debug output after fixing comprehension bugs
+- <a href="https://github.com/mmichie/m28/commit/de169fe8f3a6d49cc2577873e49e71c0b571f303">de169fe</a>: chore: remove outdated test_file_io.m28 test file
 
-Remove DEBUG_GLOBALS, DEBUG_COMP, and types module debug output
-that was added during investigation. The root issues have been
-fixed and the debug code is no longer needed.
-
-Files cleaned:
-- builtin/misc.go: removed DEBUG_GLOBALS output and unused os import
-- eval/evaluator.go: removed DEBUG_COMP output and unused os import
-- modules/python_loader.go: removed types module debug output
+The test file used outdated syntax and was not being run by the test suite.
+The actual File I/O test runs examples/06_file_io/file_operations.m28 instead.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
