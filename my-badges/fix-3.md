@@ -4,44 +4,47 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/1f518e9e4a0d05bbabdf0c0406b5527e5aba6e0d">1f518e9</a>: fix: support conditional method definitions at class level
+- <a href="https://github.com/mmichie/m28/commit/7f7ce26967e8c0c6562f1cff20dffd58beaa9404">7f7ce26</a>: fix: replace shared EmptyList with fresh instances to avoid mutation bug
 
-Class body improvements:
-- Handle `if` statements at class level to capture conditional method definitions
-- Methods defined inside `if` blocks at class level now properly added to the class
-- This fixes threading.py where `_set_native_id` is conditionally defined
+Fixed critical bug where EmptyList global was being mutated by append operations.
+After importing `re`, all empty list literals shared the same mutable instance.
 
-Weakref module enhancements:
-- Add getweakrefcount() and getweakrefs() functions
-- Add ReferenceType, ProxyType, CallableProxyType classes
-- Add _remove_dead_weakref() internal function
-- These additions improve weakref module compatibility
+Changes:
+- builtin/attributes.go: Return core.NewList() instead of core.EmptyList
+- builtin/collections.go: Return core.NewList() for list() and ListType.Call()
+- eval/evaluator.go: Return core.NewList() for empty list literals
 
-This change enables CPython's threading.py to progress much further
-during import, though some issues remain with function __hash__ support.
-- <a href="https://github.com/mmichie/m28/commit/ce98698645b98f3fa47f114d1d4a58a96bcfea85">ce98698</a>: fix: fix ThreadLock deadlock and improve set mutating methods
+This ensures each empty list is a fresh, independent instance.
 
-Threading improvements:
-- Fix ThreadLock.__enter__ deadlock by adding missing mutex unlock
-- Add _HAVE_THREAD_NATIVE_ID constant to _thread module
+File I/O test now fails with different error (list index out of range in fnmatch)
+- <a href="https://github.com/mmichie/m28/commit/9ac639be92146f1ea17695d25b8a762af2bc6c96">9ac639b</a>: fix: support __doc__ on tuplegetter, bytes(frozenset), and strict str.join()
 
-Set method fixes:
-- Fix set.add(), remove(), discard(), pop(), clear() to mutate in-place
-- Add missing mutating methods: update(), difference_update(),
-  intersection_update(), symmetric_difference_update()
-- Support iterables (not just sets) in update methods for Python compatibility
+- Allow setting __doc__ attribute on TupleGetter for urllib.parse compatibility
+- Add bytes() constructor support for SetValue and FrozenSetValue
+- Fix str.join() to reject non-string elements (match CPython behavior)
+- urllib.parse now imports successfully
 
-These changes fix the threading module deadlock and improve CPython
-standard library compatibility, particularly for WeakSet operations.
-- <a href="https://github.com/mmichie/m28/commit/7c1e7c97f79b92844efeb1e9f7e211142fcce6ee">7c1e7c9</a>: fix: list.pop() raises IndexError when empty instead of generic error
+Note: File I/O test still fails due to unrelated list literal transpiler bug
+- <a href="https://github.com/mmichie/m28/commit/44602e6d8eed22c469e8b040363c9595ea455927">44602e6</a>: fix: don't invoke descriptor protocol on Class objects
 
-Changed list.pop() on empty list to raise IndexError(-1, 0) instead of
-generic error. This fixes Python code that catches IndexError, particularly
-WeakSet._commit_removals() which uses try/except IndexError to detect
-empty list.
+Root cause: When accessing a class from a module (e.g., functools.cached_property),
+dot_notation was checking if the CLASS had __get__ and calling it as a descriptor.
+This caused cached_property.__get__(cached_property_class, functools, None) to be
+called, which tried to access self.attrname on the CLASS instead of an instance.
 
-This allows threading module to initialize successfully - test_bool.py
-now loads all imports without errors (though it hangs during execution).
+Fixes:
+1. Don't invoke __get__ when the value is a *core.Class (eval/dot_notation.go:71)
+   - Classes themselves are not descriptors when accessed from modules
+   - Only instances of descriptor classes should have __get__ invoked
+
+2. Fix descriptor protocol to call __get__(instance, owner) with 2 args (dot_notation.go:92)
+   - GetAttr returns a bound method, so we don't prepend the descriptor again
+   - Was calling with 3 args (descriptor, instance, owner) causing 'too many args' error
+
+Result: functools.cached_property can now be imported and instantiated!
+
+Test Status: 59/60 passing (98%)
+Note: Decorator syntax (@cached_property) not yet working - will be fixed in follow-up
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

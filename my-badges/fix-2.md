@@ -4,45 +4,44 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/f243ebc820d58dedca21f27087ee5b472e18b7c0">f243ebc</a>: fix: enable functions to access module globals defined after function
+- <a href="https://github.com/mmichie/m28/commit/38abaa32ba2bd5e345762f56b2cbdd75e0d9f25a">38abaa3</a>: fix: support non-string keys in dict() constructor
 
-Extended Context.Lookup() to check Global.ModuleDict when variable
-lookup reaches the end of the scope chain. This allows functions to
-access module-level variables that were defined after the function
-was created, matching Python's global variable semantics.
+Fix dict() constructor to accept any hashable type as keys, not just
+strings. This matches Python's behavior where dict keys can be any
+hashable object (int, float, tuple, etc).
 
-In Python, functions look up globals at runtime from the module's
-namespace, not at function definition time. Previously, M28 functions
-could only access variables in their captured environment chain,
-causing NameError for forward references within the same module.
+Changes:
+- Replace string-only key check in dict() with SetValue() which handles
+  any hashable type
+- Properly handle both list and tuple pairs in dict() constructor
+- Fix tuple unpacking when converting to dict
 
 Example that now works:
-```python
-def func():
-    return CONST + 1  # Forward reference
-CONST = 42
-func()  # Returns 43
-```
+  dict([(1, 'a'), (2, 'b')])  # int keys
+  dict([((1,2), 'x')])        # tuple keys
 
-This progresses CPython stdlib compatibility by enabling proper
-module-level namespace resolution for transpiled Python code.
+This enables stdlib modules like traceback.py that use dict
+comprehensions with non-string keys.
+- <a href="https://github.com/mmichie/m28/commit/04aa193c19dd8355dc9319eaa88d40c47dee035b">04aa193</a>: fix: enable del statement in class body with proper scoping
 
-test_bool.py still passes all 70 tests (100%).
-- <a href="https://github.com/mmichie/m28/commit/1a8bbb7d03874e9a31c56aeafcafe8a077e7c98a">1a8bbb7</a>: fix: isinstance() with tuple of types now handles Class wrappers
+Fix class body variable scoping to allow del statements to work
+correctly inside class definitions:
 
-Extended isinstance() tuple handling to properly check Class types
-(like StrType) and wrapper types with GetClass() method against
-primitive values like StringValue, NumberValue, etc.
+- Evaluate all class body statements (not just = and def) in
+  classBodyCtx instead of outer ctx, allowing access to class
+  variables during construction
+- Add special handling for del statements in class body to remove
+  attributes from both classBodyCtx and class.Attributes
+- Support multiple deletion targets (e.g., del x, y, z)
 
-Previously, isinstance('', (str, bytes)) would fail because str is
-a StrType (Class wrapper) not a BuiltinFunction, and the tuple loop
-only checked BuiltinFunction types for primitives.
+This fixes patterns like:
+  class Foo:
+      temp = 1
+      y = temp + 1  # Can now reference temp
+      del temp       # And delete it from the class
 
-Now both isinstance('', str) and isinstance('', (str, bytes)) work
-correctly, fixing re._compiler.isstring() function which uses
-isinstance(obj, (str, bytes)).
-
-This progresses CPython stdlib compatibility for the re module.
+Enables Python stdlib modules like textwrap.py that use temporary
+variables in class bodies.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
