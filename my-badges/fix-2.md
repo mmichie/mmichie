@@ -4,28 +4,17 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/daf87a5763d069a2039c391712a37ffb94f3aa2c">daf87a5</a>: fix: add IntEnum._convert_() method for signal.py compatibility
-- <a href="https://github.com/mmichie/m28/commit/79a680ecc460b54eabc681a1f42e64e7142f5174">79a680e</a>: fix: add CallWithKeywords overrides to all primitive type classes
+- <a href="https://github.com/mmichie/m28/commit/5d40c0d714647a47e6871aa565c2dadc90e88634">5d40c0d</a>: fix: add optional start/end parameters to str.find() method
 
-Systematically fixed all primitive type classes that embed *core.Class
-to override CallWithKeywords(), preventing them from being wrapped in
-Instance objects when called through Python code.
+- Changed str.find() to accept 1-3 arguments (sub, start, end)
+- Matches CPython signature: str.find(sub, start=0, end=len(s))
+- Fixes sysconfig.py compatibility where it calls find() with position args
+- <a href="https://github.com/mmichie/m28/commit/647d40f01725e976d5b8c3e7f800a6e3c1990352">647d40f</a>: fix: make os.environ a dict and add sys._framework
 
-The root cause was that these type classes override Call() to return
-raw primitive values, but Class.CallWithKeywords() was calling the
-generic NewInstance() which wraps primitives in Instance objects.
-
-Fixed types:
-- ListType, TupleType, DictType (collections.go)
-- StrType, IntType, FloatType (types.go)
-- PropertyType, StaticmethodType, ClassmethodType (decorators.go)
-
-This fixes issues like:
-- sys.intern() receiving Instance-wrapped strings instead of StringValue
-- classmethod objects missing __func__ attribute
-- Other primitive instantiation bugs in CPython stdlib
-
-SetType and ByteArrayTypeClass were already fixed in previous commits.
+- Changed os.environ from function to dict value for CPython compatibility
+- Python's os.py expects environ to be dict-like, not callable
+- Added sys._framework attribute (False for non-framework builds)
+- Fixes sysconfig.py import issue where environ.get() was failing
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
