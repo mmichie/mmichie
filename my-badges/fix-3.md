@@ -4,47 +4,39 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/7f7ce26967e8c0c6562f1cff20dffd58beaa9404">7f7ce26</a>: fix: replace shared EmptyList with fresh instances to avoid mutation bug
+- <a href="https://github.com/mmichie/lima/commit/b95e20b07b0759af2f9c66faebf2a25d3a66ff9c">b95e20b</a>: fix(ui): use table.KeyMap for proper vim-style navigation
 
-Fixed critical bug where EmptyList global was being mutated by append operations.
-After importing `re`, all empty list literals shared the same mutable instance.
+Configured the table's native KeyMap instead of manually converting keys:
 
-Changes:
-- builtin/attributes.go: Return core.NewList() instead of core.EmptyList
-- builtin/collections.go: Return core.NewList() for list() and ListType.Call()
-- eval/evaluator.go: Return core.NewList() for empty list literals
+- Set km.LineUp to "k" and "up"
+- Set km.LineDown to "j" and "down"
+- Set km.GotoTop to "g" and "home"
+- Set km.GotoBottom to "G" and "end"
+- Set page up/down to ctrl+u/d and pgup/pgdn
 
-This ensures each empty list is a fresh, independent instance.
+This is the correct way to add custom keybindings to bubbles table.
+The table component will now properly handle j/k navigation.
+- <a href="https://github.com/mmichie/lima/commit/91c12f06346541e79b1c47e638391dacae488c14">91c12f0</a>: fix(ui): add vim-style j/k navigation and enable table focus
 
-File I/O test now fails with different error (list index out of range in fnmatch)
-- <a href="https://github.com/mmichie/m28/commit/9ac639be92146f1ea17695d25b8a762af2bc6c96">9ac639b</a>: fix: support __doc__ on tuplegetter, bytes(frozenset), and strict str.join()
+Added support for vim-style navigation and improved selection visibility:
 
-- Allow setting __doc__ attribute on TupleGetter for urllib.parse compatibility
-- Add bytes() constructor support for SetValue and FrozenSetValue
-- Fix str.join() to reject non-string elements (match CPython behavior)
-- urllib.parse now imports successfully
+- Map j/k keys to down/up arrow keys for familiar vim navigation
+- Call table.Focus() to enable selection highlighting
+- Used fresh lipgloss.NewStyle() for Selected and Cell styles
 
-Note: File I/O test still fails due to unrelated list literal transpiler bug
-- <a href="https://github.com/mmichie/m28/commit/44602e6d8eed22c469e8b040363c9595ea455927">44602e6</a>: fix: don't invoke descriptor protocol on Class objects
+Now j/k should work in addition to arrow keys, and the selected row
+should be highlighted with the TP7 cyan background (black text on cyan).
+- <a href="https://github.com/mmichie/lima/commit/c3d1dcf86f8552f7f1025a8a6a67064d57651417">c3d1dcf</a>: fix(ui): enable table scrolling by properly delegating key events
 
-Root cause: When accessing a class from a module (e.g., functools.cached_property),
-dot_notation was checking if the CLASS had __get__ and calling it as a descriptor.
-This caused cached_property.__get__(cached_property_class, functools, None) to be
-called, which tried to access self.attrname on the CLASS instead of an instance.
+Fixed keyboard navigation in the transactions table:
 
-Fixes:
-1. Don't invoke __get__ when the value is a *core.Class (eval/dot_notation.go:71)
-   - Classes themselves are not descriptors when accessed from modules
-   - Only instances of descriptor classes should have __get__ invoked
+- Moved table.Update() delegation to handle all non-enter key events
+- This allows the table component to handle j/k, arrows, pgup/pgdn, home/end, g/G
+- Only intercept 'enter' for categorization functionality
+- Category picker still handles its own keys when active
 
-2. Fix descriptor protocol to call __get__(instance, owner) with 2 args (dot_notation.go:92)
-   - GetAttr returns a bound method, so we don't prepend the descriptor again
-   - Was calling with 3 args (descriptor, instance, owner) causing 'too many args' error
-
-Result: functools.cached_property can now be imported and instantiated!
-
-Test Status: 59/60 passing (98%)
-Note: Decorator syntax (@cached_property) not yet working - will be fixed in follow-up
+The bubbles table component has built-in navigation that we need to
+delegate to - now keyboard scrolling works properly.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

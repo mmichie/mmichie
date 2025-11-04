@@ -4,16 +4,20 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/lima/commit/21dc424fba6c3fb123f27a283fa333370fa8c505">21dc424</a>: fix: resolve test failures and linter errors
+- <a href="https://github.com/mmichie/lima/commit/497af973a11b9ce6e5b1520a1acf51ed9965e33f">497af97</a>: fix(ui): prevent fullscreen wrapper from overriding table selection styles
 
-- Remove redundant newlines from fmt.Println in categorizer-demo
-- Fix TestCategorizer_Feedback by disabling LearnFromEdits in test config
-  to avoid trying to save to non-existent directory
-- <a href="https://github.com/mmichie/lima/commit/59c3a411ddae5466c4615f3510fc5804116849f9">59c3a41</a>: fix(ui): show transactions before window resize
+The renderFullScreenContent() was wrapping the entire table output with a
+lipgloss style that applied a blue background, which was overriding the
+table's internal Selected row styling. Now skipping this wrapper for the
+TransactionsView so the table's native cyan selection highlighting can
+show through properly. Also made selection bold and ensured focus is
+maintained after every table update.
+- <a href="https://github.com/mmichie/lima/commit/bc1d88fadf685a143d77fb18a4dd973bd9f05f26">bc1d88f</a>: fix(ui): remove embedded colors from table data to fix selection highlighting
 
-Set default maxVisible to 10 if height not initialized yet.
-This fixes the issue where transactions view shows count but
-no transactions until after a window resize event.
+The previous approach of pre-coloring row data strings with lipgloss embedded
+ANSI codes was preventing the Selected style background from showing through.
+Now using plain strings and relying on Cell/Selected styles for coloring, which
+allows the cyan selection bar to be visible when navigating with j/k.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
