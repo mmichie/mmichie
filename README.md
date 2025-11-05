@@ -44,5 +44,6 @@ Here are some ideas to get you started:
 <a href="my-badges/fix-4.md"><img src="https://my-badges.github.io/my-badges/fix-4.png" alt="I did 4 sequential fixes." title="I did 4 sequential fixes." width="64"></a>
 <a href="my-badges/fix-5.md"><img src="https://my-badges.github.io/my-badges/fix-5.png" alt="I did 5 sequential fixes." title="I did 5 sequential fixes." width="64"></a>
 <a href="my-badges/fix-6.md"><img src="https://my-badges.github.io/my-badges/fix-6.png" alt="I did 6 sequential fixes." title="I did 6 sequential fixes." width="64"></a>
+<a href="my-badges/delorean.md"><img src="https://my-badges.github.io/my-badges/delorean.png" alt="I committed on the day Doctor Emmett Brown invented the flux capacitor!" title="I committed on the day Doctor Emmett Brown invented the flux capacitor!" width="64"></a>
 <!-- my-badges end -->
 
