@@ -568,6 +568,7 @@ Commits:
 - <a href="https://github.com/mmichie/cardsharp/commit/0ddda554fc6068fa9c6215d75e1f0f717c523b7a">0ddda55</a>
 - <a href="https://github.com/mmichie/cardsharp/commit/7dabf4ee56ef03e64d611f56ea9f246480d4e386">7dabf4e</a>
 - <a href="https://github.com/mmichie/cardsharp/commit/4e6aae0d56f24d90fba8264612d615ef45b739f4">4e6aae0</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/3bcc6627530a78e0066b8ad0204945b7c7aaf708">3bcc662</a>
 - <a href="https://github.com/mmichie/dotfiles/commit/af603d52450cbbc52fa18b6e9cfd70a31f31c1ad">af603d5</a>
 - <a href="https://github.com/mmichie/dotfiles/commit/e06b4a3702ce9a6ebbf408c39cf5feed21f43d97">e06b4a3</a>
 - <a href="https://github.com/mmichie/dotfiles/commit/aa7f1b95efb5231264b821b336a89410c77ebe26">aa7f1b9</a>
