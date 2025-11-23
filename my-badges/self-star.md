@@ -2,8 +2,8 @@
 <strong>I&apos;ve starred 2 my own repositories.</strong>
 <br><br>
 
-- <a href="https://github.com/mmichie/fishjelly">mmichie/fishjelly</a>
 - <a href="https://github.com/mmichie/cardsharp">mmichie/cardsharp</a>
+- <a href="https://github.com/mmichie/fishjelly">mmichie/fishjelly</a>
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
