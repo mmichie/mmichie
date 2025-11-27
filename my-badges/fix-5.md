@@ -4,102 +4,148 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/c59e77e13d3133f1b168cfe2c30d24c195c025ed">c59e77e</a>: fix: implement correct dict.clear() method behavior
+- <a href="https://github.com/mmichie/m28/commit/853b45726aa7db321395276f7531acd8cb51d897">853b457</a>: fix(core,eval): convert 13 collection method errors to structured exception types
 
-Fixed dict.clear() to properly mutate dictionary in-place instead of
-returning a new empty dict.
+Converted fmt.Errorf calls to proper exception types in list, set, and tuple methods:
 
-Changes:
-- Modified core/dict_methods.go lines 189-198
-- Now iterates through all keys and deletes them
-- Returns None (Python standard behavior)
-- Properly clears the dictionary in-place
+**List methods (8 fixes):**
+- append() argument count → TypeError
+- extend() argument count → TypeError
+- insert() argument count and type errors → TypeError (2 cases)
+- remove() argument count → TypeError
+- pop() type error → TypeError
+- index() argument count → TypeError, value not found → ValueError
+- count() argument count → TypeError
 
-Before: d.clear() returned NewDict() (wrong - doesn't modify original)
-After: d.clear() deletes all entries from d and returns Nil (correct)
+**Set methods (4 fixes):**
+- set() constructor argument errors → TypeError (2 cases)
+- remove() argument count → TypeError, missing element → KeyError
+- pop() empty set → KeyError
+
+**Tuple methods (2 fixes):**
+- count() argument count → TypeError
+- index() argument count → TypeError
+
+**Enhanced KeyError struct:**
+- Added optional Message field to support custom error messages
+- Allows KeyError to work for both dict key lookups ("key not found: X") and set operations ("pop from an empty set")
+- Updated Error() method to use Message when provided, fallback to Key otherwise
+
+**Improved error unwrapping:**
+- Added error unwrapping loop in errorToExceptionInstance to properly handle errors wrapped by fmt.Errorf(...%w...)
+- Ensures structured exception types are preserved even when wrapped by higher-level error handling code
+
+Test results: All 60 M28 tests passing + 11/12 collection exception type tests passing
+- <a href="https://github.com/mmichie/m28/commit/03b048a44ee1855449825ea05a17784990cbf53a">03b048a</a>: fix(builtin,core,eval): convert 14 more high-impact fmt.Errorf to structured exception types
+
+Converted fmt.Errorf calls to proper exception types in commonly-used operations:
+- iter() and next() argument errors → TypeError
+- chr() range error → ValueError
+- ord() string length error → TypeError
+- sum() type errors → TypeError (3 cases)
+- dict unhashable key errors → TypeError (4 cases: dict_methods, containers, util.go literal construction)
+- string formatting errors → KeyError (missing key), ValueError (malformed format)
+- list index out of range → IndexError
+
+Also extended WrapEvalError() to preserve exception types:
+- Added type preservation for TypeError, ValueError, KeyError, IndexError, ZeroDivisionError, AttributeError
+- Previously only NameError was preserved, causing all other typed errors to show as generic "Exception"
+- Now all structured exception types propagate correctly through the error wrapping chain
+
+All exceptions now properly convert to Python exception instances and can be caught with specific except clauses.
+
+Test results: All 60 M28 tests passing + 10/10 exception type tests passing
+- <a href="https://github.com/mmichie/m28/commit/7e1c70118a39c7401f3b45362969962dbdd93782">7e1c701</a>: fix(builtin,core): convert 14 high-impact fmt.Errorf to structured exception types
+
+Converted fmt.Errorf calls to proper typed exceptions for common operations
+that users will encounter frequently. This allows Python code to catch
+specific exception types correctly.
+
+Changes by category:
+
+**Slice operations (4 fixes):**
+- slice indices type errors → TypeError
+- slice step = 0 → ValueError
+
+**Collection constructors (4 fixes):**
+- list() keyword args → TypeError
+- tuple() keyword args → TypeError
+- set() non-iterable arg → TypeError
+- dict() invalid arg → TypeError
+
+**Builtin functions (2 fixes):**
+- all() non-iterable → TypeError
+- any() non-iterable → TypeError
+
+**Arithmetic (2 fixes):**
+- Decimal division by zero → ZeroDivisionError
+- Decimal unsupported operand → TypeError
+
+**Attribute access (1 fix):**
+- Missing attribute → AttributeError
+
+**Type checking (1 fix):**
+- len() with invalid type → TypeError (from previous commit)
 
 Testing:
-- CPython test_dict.py now passes tests 1-10 (was failing at test 5)
-- dict.pop(), dict.popitem(), dict.clear() all work correctly
-- Go unit tests: all pass ✓
-- M28 test suite: 60/60 pass ✓
-- CPython tests: 3/4 pass (75%)
+- All 60 M28 tests pass
+- Manual testing confirms exception types preserved correctly
+- Python code can now catch TypeError, ValueError, etc. properly
 
-Closes M28-38ee
-- <a href="https://github.com/mmichie/m28/commit/c794d6779307a69fc59d667610d1ba1e869e6eaa">c794d67</a>: fix: unwrap LocatedValue in star unpacking and walrus operator
+Example impact:
+```python
+try:
+    s = slice("oops", 10)
+except TypeError:  # Now works! (was generic Exception before)
+    print("Caught it!")
+```
 
-Fixed critical LocatedValue unwrapping issues in eval/util.go:
+Partial progress on M28-2ab3 (fmt.Errorf audit)
+14 down, ~1,588 to go (primarily in less critical code paths)
+- <a href="https://github.com/mmichie/m28/commit/009d1ed092d6ec1eabd14fe2cab1cb55c64ad457">009d1ed</a>: fix(eval,builtin): enhance exception message preservation and type accuracy
 
-- Star unpacking (line 798-803): Added unwrapLocated() call and proper
-  error handling before type assertions. Now uses GetItemAsSymbol()
-  smart accessor for safer access.
+Fixed two issues with exception handling that were causing error messages
+to be lost or duplicated:
 
-- Walrus operator (line 1375): Replaced direct type assertion with
-  GetItemAsSymbol() smart accessor to properly handle LocatedValue.
+1. Exception message duplication in errorToExceptionInstance:
+   - When converting eval.Exception to Python exception, was calling exc.Error()
+   - exc.Error() returns "Type: Message", then passing that to createPythonExceptionInstance
+   - This caused "Exception: Exception" instead of preserving the actual message
+   - Now use exc.Message directly to avoid duplication
 
-These fixes eliminate crash risks when LocatedValue wrappers are
-present in parsed expressions. Starred assignment tests now pass.
+2. TypeError not being raised by len() builtin:
+   - len() was returning fmt.Errorf instead of *core.TypeError
+   - This caused "object of type 'X' has no len()" to be generic Exception
+   - Now returns proper TypeError that can be caught with "except TypeError"
 
-Closes M28-d932
-- <a href="https://github.com/mmichie/m28/commit/bf314c98bdeb6d99177bfaf18428b369fcbaa87f">bf314c9</a>: fix: unwrap LocatedValue in starred unpacking assignment
+Testing:
+- All existing tests pass
+- Exception types now preserved correctly (TypeError vs Exception)
+- Exception messages preserved without duplication
+- Re-raising exceptions maintains type and message
 
-Fixed starred unpacking (PEP 3132) to properly unwrap LocatedValue before
-type checking, enabling syntax like:
-  first, *rest = [1, 2, 3, 4]
-  callable_obj, *args = arguments
+Partial progress on M28-6c9c (unittest.TestProgram issue still needs investigation)
+- <a href="https://github.com/mmichie/m28/commit/4193a41361e45cc3c85d2766877f7c22f8d1ceae">4193a41</a>: fix(eval): preserve error messages when converting Go errors to Python exceptions
 
-Key changes in eval/util.go:
-- Unwrap target before checking if it's the star index
-- Unwrap star variable name before extracting symbol
-- Unwrap target before checking if it's a regular symbol or dot notation
-- Add proper error messages with type information
+When exception class instantiation failed in createPythonExceptionInstance,
+the function would fall back to returning string values instead of exception
+instances. This caused error messages to be lost in the exception handling
+chain, resulting in unhelpful "Exception: Exception" messages.
 
-This fixes unittest.assertRaises which uses:
-  callable_obj, *args = args
+Changes:
+- Modified createPythonExceptionInstance to always return exception Instance
+  objects, even when class lookup or instantiation fails
+- Create minimal Instance objects with message stored in args tuple attribute
+- Added debug logging when instantiation fails to aid troubleshooting
+- Ensures error messages are preserved throughout exception handling
 
-Tests now passing:
-- CPython test/test_bool.py (31 tests)
-- unittest.assertRaises with various arguments
-- Starred unpacking in all contexts
-- <a href="https://github.com/mmichie/m28/commit/6a5211e2710078774720f84ffe29ed0b6dd32b5c">6a5211e</a>: fix: set submodules as attributes on parent packages in sys.modules
+Testing:
+- Added comprehensive test suite for error message preservation
+- All existing tests pass
+- Error messages now properly preserved for TypeError, ValueError, Exception
+- Significantly improves debugging experience
 
-When loading dotted module names like 'test.test_bool', the import system
-now sets the submodule as an attribute on the parent package module, allowing
-code like sys.modules['test'].test_bool to work.
-
-Key changes:
-- registerInSysModules/registerModuleInSysModules now check if a parent
-  package exists in sys.modules and set the child module as an attribute
-- Only set child on existing parents (don't create placeholder parents)
-- Check if existing child is module-like before overwriting
-
-This fixes the error "'dict' object has no attribute 'test_bool'" when
-unittest tries to access submodules via parent packages.
-
-Prevents two bugs:
-1. Creating empty placeholder parent modules that block real module loading
-2. Overwriting real attributes (like collections.namedtuple) with failed
-   submodule load attempts
-- <a href="https://github.com/mmichie/m28/commit/f3501f91182b1571e5fe8f263ead02ee7a300994">f3501f9</a>: fix: unwrap LocatedValue in generator yield detection and transformation
-
-Fixed two related bugs that prevented generator functions from working correctly:
-
-1. containsYield() wasn't unwrapping LocatedValue before checking if an element
-   was a yield symbol, causing generator functions to not be detected and wrapped
-   as GeneratorFunction
-
-2. transformToSteps() wasn't unwrapping LocatedValue before processing nodes,
-   causing yield statements to not be transformed into StepYield execution steps
-
-These fixes enable:
-- Generator functions to be properly detected and wrapped
-- Yield statements to properly pause generator execution
-- Context managers (@contextmanager) to work correctly
-- unittest.main() to initialize and run tests
-
-The root cause was that Python's parser wraps AST nodes in LocatedValue for
-source location tracking, but the generator infrastructure wasn't accounting
-for this wrapping when detecting and transforming yield statements.
+Closes M28-e346
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
