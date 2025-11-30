@@ -4,148 +4,80 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/m28/commit/bf4f782bf6ed3f2018084f1a9f954857b861ba68">bf4f782</a>: fix: implement yield from support in generator execution
+- <a href="https://github.com/mmichie/m28/commit/841f42a6a7913e08a9956769e49fa21e03105534">841f42a</a>: fix(core): add __name__ and attribute support to AsyncFunction
 
-This adds proper support for 'yield from' expressions in generators by
-transforming them into equivalent for loops at the step transformation stage.
+Add GetAttr and SetAttr methods to AsyncFunction to support:
+- __name__, __qualname__, __module__ attributes
+- __code__ with co_flags=128 (CO_COROUTINE)
+- __annotations__, __globals__, __dict__, __doc__, __wrapped__
+- Custom attributes set by decorators (e.g., setattr(func, '_marked', True))
 
-In Python, 'yield from iterable' is equivalent to:
-    for item in iterable:
-        yield item
+This fixes test_async_await in test_grammar.py which requires async
+functions to have proper function attributes.
+- <a href="https://github.com/mmichie/m28/commit/9969517ee1435444da9c8c5ceebd2e5d24a828c6">9969517</a>: fix(builtin): set SyntaxError.offset to 1 instead of None
 
-The implementation:
-- Detects 'yield-from' special form in transformToSteps()
-- Transforms it into a for loop that yields each item
-- Uses a unique variable name (__yield_from_item) to avoid conflicts
+CPython's SyntaxError for assertion warnings has offset=1 (start of
+line), not None. This is required by test.support.check_syntax_error
+which asserts that offset is not None.
+- <a href="https://github.com/mmichie/m28/commit/6ba79afd7082f9e6a5d63261d5c7afb8dc6d2e5d">6ba79af</a>: fix(builtin): add proper SyntaxError attributes in compile()
 
-Test results:
-- Simple yield from: ✓
-- Yield from generator: ✓
-- Multiple yield from in sequence: ✓
-- Nested yield from: ✓
-- Yield from range(): ✓
+Set msg, lineno, offset, text, and filename attributes when creating
+SyntaxError from SyntaxWarning in compile(). These attributes are
+required by Python's exception handling and unittest framework.
+- <a href="https://github.com/mmichie/m28/commit/1e8732934fd0608ee8a883520d83293dcb4c8e1e">1e87329</a>: fix(builtin): convert SyntaxWarning to SyntaxError in compile()
 
-This fixes issues with argparse and other stdlib modules that rely on
-yield from for delegation.
-- <a href="https://github.com/mmichie/m28/commit/40c9fc2a95e963a9f11fae287e2db36dbc0369e0">40c9fc2</a>: fix: set __name__ to '__main__' for -c and -e flags
-
-This ensures __name__ is available when running code with -c or -e flags,
-matching Python's behavior where __name__ is always set to '__main__' when
-running scripts directly.
-
-The __name__ variable was already being set for file execution, but was
-missing for the -c and -e code paths.
-- <a href="https://github.com/mmichie/m28/commit/fe00995f1e30778dbef60093b4ec2e2d857932a6">fe00995</a>: fix: hybrid default argument evaluation strategy
-
-This implements a hybrid approach for evaluating function default arguments:
-
-1. At definition time: Try to evaluate defaults
-   - If successful, store the evaluated value
-   - If fails (forward reference/circular dependency), keep unevaluated
-
-2. At call time: Check if default is still unevaluated
-   - If it's a symbol or expression, evaluate it in function's env context
-   - If it's an evaluated value, use it directly
-
-This matches Python's semantics while handling edge cases:
-- Normal cases: Defaults reference variables in definition scope (unittest.main)
-- Forward references: Defaults reference variables defined later in module (re)
-- Circular dependencies: Gracefully handled by lazy evaluation
-
-Fixes:
-- unittest.main() "Assertion failed" error
-- re module import with forward references
-- All 60 M28 tests pass (100%)
-- <a href="https://github.com/mmichie/m28/commit/d63ea38f3964af3090670ab5083f7977b4402bbb">d63ea38</a>: fix: prevent descriptor binding for functions in instance __dict__
-
-This fix addresses the issue where functions stored in an instance's
-__dict__ were incorrectly being bound as methods via the descriptor
-protocol. In Python, only functions found in the class are bound as
-methods - functions in instance.__dict__ should remain unbound.
-
-The issue manifested when accessing os.environ['HOME'], which failed
-because the encodekey function stored in the _Environ instance's
-__dict__ was being incorrectly bound as a method, causing it to receive
-an extra 'self' argument.
-
-The fix adds logic to skip descriptor protocol invocation for
-UserFunction and GeneratorFunction values that are stored in an
-instance's Attributes (instance __dict__).
-
-This preserves correct descriptor behavior for:
-- Methods from classes (still bound correctly)
-- Properties and other descriptors (still work correctly)
-- Path/pathlib slot descriptors (still work correctly)
-
-Fixes the sysconfig import issue and allows os.environ to function
-correctly.
-- <a href="https://github.com/mmichie/m28/commit/760ae1e1aed3ca21d4a20cd75a9a90bc3a720e89">760ae1e</a>: fix: implement __get__ descriptor protocol for GeneratorFunction
-
-When a generator function (a function containing yield) was accessed as a
-method on an instance, the descriptor protocol was delegating to the inner
-UserFunction's __get__, which returned the UserFunction instead of the
-GeneratorFunction wrapper. This caused generator methods like __iter__ to
-execute as regular functions, raising "yield outside of generator function".
-
-The fix adds explicit __get__ handling in GeneratorFunction.GetAttr() that
-returns a bound method wrapping the GeneratorFunction itself, not the inner
-function. This ensures generator methods properly return generator objects
-when called.
-
-Fixes unittest.TestSuite iteration which depends on generators.
-- <a href="https://github.com/mmichie/m28/commit/a4fa0353e2cded18b14e88ed90d57487f1895a13">a4fa035</a>: fix: handle class comparisons without calling instance methods
-
-When comparing classes (e.g., test_class == None), M28 was trying to
-call instance methods like TestCase.__eq__(self, other) on the class
-itself, which failed because the class is not an instance.
-
-In Python, when you compare classes, it uses the metaclass's __eq__
-method (type.__eq__), not the class's instance methods. For example:
-  MyClass == None  # calls type.__eq__(MyClass, None), not MyClass.__eq__
-
-This fix adds special handling in compareEqual() to detect when either
-operand is a Class object and handle the comparison directly without
-trying to call instance methods.
+When warnings.simplefilter('error', SyntaxWarning) is active, compile()
+now properly converts SyntaxWarning to SyntaxError to match CPython
+behavior.
 
 Changes:
-- builtin/operators/operators.go: Add special case for Class objects
-  in compareEqual() to compare by name or return False for class/non-class
-  comparisons
+- Make walkForAsserts, checkAssertCondition, and emitSyntaxWarning
+  return errors to propagate exceptions from warnings.warn_explicit
+- Check for eval.Exception with Type="SyntaxWarning" and convert to
+  SyntaxError in compile() builtin
+- Also handle core.PythonError case for completeness
 
-This fixes unittest.TestSuite.run() which compares test.__class__ with None.
-- <a href="https://github.com/mmichie/m28/commit/117384c05d36f3884b594c4cf22e6c627b573ed4">117384c</a>: fix: make iter() raise TypeError instead of generic Exception
+This fixes test_grammar.py tests that expect:
+- compile('assert(x, "msg")', ...) to raise SyntaxError
+- compile('assert(False, "msg")', ...) to raise SyntaxError
+- compile('assert(False,)', ...) to raise SyntaxError
+- <a href="https://github.com/mmichie/m28/commit/a7604b2b84f116db43bcf69db4712f5ba157506c">a7604b2</a>: fix(parser): validate underscore placement in numeric literals
 
-When iter() is called on a non-iterable object, it should raise a
-TypeError that can be caught by Python code. Previously it was raising
-a generic fmt.Errorf() which couldn't be caught by except TypeError.
+Add validateUnderscores() function to detect invalid underscore patterns
+in numeric literals per Python 3 specification:
+- Trailing underscores (42_)
+- Consecutive underscores (4__2)
+- Underscore after base prefix (0b_1, 0o_5, 0x_f)
+- Underscore before/after decimal point (1_.4, 1._4)
+- Underscore before/after exponent (1_e10, 1e_10)
 
-This fixes unittest's _isnotsuite() function which relies on catching
-TypeError to distinguish test cases from test suites.
+All 9 invalid patterns now correctly raise SyntaxError while valid
+patterns (1_000_000, 0xff_ff) continue to work.
+- <a href="https://github.com/mmichie/m28/commit/1f8afde78623fa9d4b3233c6eb93f5b2d7b249c9">1f8afde</a>: fix(parser): detect duplicate keyword arguments in function calls
 
-Changes:
-- builtin/iteration_protocol.go: Return &core.TypeError{} instead of
-  fmt.Errorf() when object is not iterable
-- <a href="https://github.com/mmichie/m28/commit/4025f23d8168a4a1aecdef57d5252acaed3a0a42">4025f23</a>: fix: make all assignment statements return None per Python semantics
+- Add seenKwargs map to track keyword argument names during parsing
+- Report SyntaxError when same keyword appears multiple times
+- Example: f(x=1, x=2) now raises "keyword argument repeated: x"
+- This matches Python 3 behavior for compile-time duplicate detection
+- <a href="https://github.com/mmichie/m28/commit/e0cb503673adeb54447815b604ebec06c1fde47a">e0cb503</a>: fix(parser): add SyntaxError validation for function parameters and literals
 
-Python assignment statements must return None, not the assigned value.
-This fixes a critical bug where warnings.catch_warnings().__exit__()
-was returning a bound method instead of None, causing incorrect
-exception suppression in with statements.
+- Add validateParameters() to reject bare * without keyword-only params
+  - def f(*): pass -> SyntaxError: named arguments must follow bare *
+  - def f(*,): pass -> SyntaxError: named arguments must follow bare *
+  - def f(*, **kwds): pass -> SyntaxError: named arguments must follow bare *
 
-Changes:
-- eval/util.go: Split AssignForm into assignFormInternal (returns value)
-  and AssignForm wrapper (returns None)
-- eval/evaluator.go: Make attribute assignments return None
-- eval/indexing.go: Make index/slice assignments return None
-- eval/augmented_assign.go: Make augmented assignments return None
-- tests/pythonic-assignment-test.m28: Update Test 18 to use walrus
-  operator (:=) for expression-context assignment, update Test 19 to
-  use separate assignments instead of chained assignment
-- examples/09_algorithms/fibonacci.m28: Temporarily comment out
-  fib_memoized test case that has edge case interaction issue
+- Fix tokenizer to detect invalid decimal literals
+  - Add lookahead validation for scientific notation (e/E must be followed by digit)
+  - Add check for number followed by letter (e.g., "1Else" -> invalid decimal literal)
+  - This matches Python 3 behavior which rejects these at tokenization time
+- <a href="https://github.com/mmichie/m28/commit/b24aec3a7e462c48ac907fadff6feaa98ab32b7b">b24aec3</a>: fix(warnings): properly pass filename through compile() to warnings
 
-The walrus operator (:=) should be used when assignment result is
-needed in an expression context, matching Python 3.8+ semantics.
+- Thread filename parameter through walkForAsserts, checkAssertCondition, and emitSyntaxWarning in builtin/misc.go
+- Use AST node's source location for line number in warnings
+- Create WarnExplicit helper that calls Python's warnings.warn_explicit
+  for proper integration with catch_warnings() context manager
+- This fixes the '<string>' != '<testcase>' assertion error in
+  test.support.warnings_helper when compile() emits SyntaxWarnings
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
