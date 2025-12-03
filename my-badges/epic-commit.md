@@ -644,6 +644,11 @@ Commits:
 - <a href="https://github.com/mmichie/m28/commit/304b7cb9e017e48131456ed1e0eeaf473e858455">304b7cb</a>
 - <a href="https://github.com/mmichie/m28/commit/abdd70595b5189d0ce9561c2dc52ea30df6c9bd4">abdd705</a>
 - <a href="https://github.com/mmichie/m28/commit/edd3aeea2370895f1b92aac5e2084bfb7e821945">edd3aee</a>
+- <a href="https://github.com/mmichie/gosh/commit/8033bbc5caaab6d079dffdeb6c39e4805c70575b">8033bbc</a>
+- <a href="https://github.com/mmichie/gosh/commit/e283ee13bbcdf9b4cf2d4da3960f380ab13b8d24">e283ee1</a>
+- <a href="https://github.com/mmichie/gosh/commit/e7afb2ecf416f9a00ea6e56df25edb45b34c158c">e7afb2e</a>
+- <a href="https://github.com/mmichie/gosh/commit/1fe814fcd6844655287f9ffece9b5e22ff9ca7f8">1fe814f</a>
+- <a href="https://github.com/mmichie/gosh/commit/7ff0e253fe728e249efe2c96cf375052f430751c">7ff0e25</a>
 - <a href="https://github.com/mmichie/gosh/commit/9e54457d4b5a195d802287938d02687a3528299c">9e54457</a>
 - <a href="https://github.com/mmichie/gosh/commit/e010450577f1cfeec4d6a11b5c9a8d9426a44100">e010450</a>
 - <a href="https://github.com/mmichie/gosh/commit/4f17885fa2d477bd44a209d44f3cf2cbe16cff60">4f17885</a>
@@ -729,6 +734,7 @@ Commits:
 - <a href="https://github.com/mmichie/cardsharp/commit/0ddda554fc6068fa9c6215d75e1f0f717c523b7a">0ddda55</a>
 - <a href="https://github.com/mmichie/cardsharp/commit/7dabf4ee56ef03e64d611f56ea9f246480d4e386">7dabf4e</a>
 - <a href="https://github.com/mmichie/cardsharp/commit/4e6aae0d56f24d90fba8264612d615ef45b739f4">4e6aae0</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/760fbe0a289e3578b217ea8b758711488078a013">760fbe0</a>
 - <a href="https://github.com/mmichie/dotfiles/commit/ff2f1f75f07f80ad5ef645ccea16c74e228a47e6">ff2f1f7</a>
 - <a href="https://github.com/mmichie/dotfiles/commit/b51010cf47198e072c121da7f1f71ab76c0415a4">b51010c</a>
 - <a href="https://github.com/mmichie/dotfiles/commit/8e1ef0a41fa4553781e43f3abfead0890311eb93">8e1ef0a</a>
