@@ -679,6 +679,11 @@ Commits:
 - <a href="https://github.com/mmichie/gosh/commit/be2c4df0fbd53b740058fdb1c09e194ad156a451">be2c4df</a>
 - <a href="https://github.com/mmichie/gosh/commit/8478358a8ab78a5e5e653cc6c6ba4a889e634956">8478358</a>
 - <a href="https://github.com/mmichie/gosh/commit/3e93a01384a2bef1fbf171482269dcf7a8a8f24f">3e93a01</a>
+- <a href="https://github.com/mmichie/rustyhook/commit/70ecafe68d813192aa41576229eb2fe793cbc3f2">70ecafe</a>
+- <a href="https://github.com/mmichie/rustyhook/commit/5a416afbc41d10ff368e8063c311c083df0d5011">5a416af</a>
+- <a href="https://github.com/mmichie/rustyhook/commit/239184aa2f4a6b5ede7e9e5604b5481391bebfbe">239184a</a>
+- <a href="https://github.com/mmichie/rustyhook/commit/18bf8c56612531f7480c82f2989ee5812902eb54">18bf8c5</a>
+- <a href="https://github.com/mmichie/rustyhook/commit/6f675ddd0cf8dfba599bf443b86cae1ab99d86ab">6f675dd</a>
 - <a href="https://github.com/mmichie/rustyhook/commit/38363bd23659dc8caccabccaca66ff87a8abc56a">38363bd</a>
 - <a href="https://github.com/mmichie/rustyhook/commit/e714b47598126ad867536baf87e4a0c2b3f4de38">e714b47</a>
 - <a href="https://github.com/mmichie/rustyhook/commit/fcf0eb78fdcfe2435d7e8639544046a7ddc929d0">fcf0eb7</a>
