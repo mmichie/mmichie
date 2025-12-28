@@ -8,7 +8,7 @@ My favorite commit message words are:
 2. support (used 1419 times)
 3. tests (used 1203 times)
 4. update (used 1191 times)
-5. added (used 1116 times)
+5. function (used 1131 times)
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
