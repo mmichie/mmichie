@@ -29,6 +29,7 @@ Commits:
 - <a href="https://github.com/mmichie/lima/commit/3b2b4aebb1f958e780219b86b9bdb141fcb774a9">3b2b4ae</a>
 - <a href="https://github.com/mmichie/lima/commit/6ddc1856e029ce98900969d6bb926f2186f2e565">6ddc185</a>
 - <a href="https://github.com/mmichie/lima/commit/4de6961e944e69ff854087e8f0d1b82731e4a106">4de6961</a>
+- <a href="https://github.com/mmichie/m28/commit/2794944b39f29b07389109c6650de69fa971afe9">2794944</a>
 - <a href="https://github.com/mmichie/m28/commit/47f3c564554e526b57d3e82b6bc9f86e57f22495">47f3c56</a>
 - <a href="https://github.com/mmichie/m28/commit/cb3929cabe8864e7e9cb02fd9e095b86546d9d48">cb3929c</a>
 - <a href="https://github.com/mmichie/m28/commit/7b7b11106ef63ef606d9233e54403fb0c64444db">7b7b111</a>
@@ -679,6 +680,7 @@ Commits:
 - <a href="https://github.com/mmichie/gosh/commit/be2c4df0fbd53b740058fdb1c09e194ad156a451">be2c4df</a>
 - <a href="https://github.com/mmichie/gosh/commit/8478358a8ab78a5e5e653cc6c6ba4a889e634956">8478358</a>
 - <a href="https://github.com/mmichie/gosh/commit/3e93a01384a2bef1fbf171482269dcf7a8a8f24f">3e93a01</a>
+- <a href="https://github.com/mmichie/rustyhook/commit/30b28e6b9836007f409f97afcd97c079d8ad2a5c">30b28e6</a>
 - <a href="https://github.com/mmichie/rustyhook/commit/66ab1e06b6ad3b2f0dfd914546b5d960f868cf55">66ab1e0</a>
 - <a href="https://github.com/mmichie/rustyhook/commit/70ecafe68d813192aa41576229eb2fe793cbc3f2">70ecafe</a>
 - <a href="https://github.com/mmichie/rustyhook/commit/5a416afbc41d10ff368e8063c311c083df0d5011">5a416af</a>

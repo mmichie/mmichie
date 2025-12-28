@@ -46,5 +46,7 @@ Here are some ideas to get you started:
 <a href="my-badges/fix-6.md"><img src="https://my-badges.github.io/my-badges/fix-6.png" alt="I did 6 sequential fixes." title="I did 6 sequential fixes." width="64"></a>
 <a href="my-badges/delorean.md"><img src="https://my-badges.github.io/my-badges/delorean.png" alt="I committed on the day Doctor Emmett Brown invented the flux capacitor!" title="I committed on the day Doctor Emmett Brown invented the flux capacitor!" width="64"></a>
 <a href="my-badges/abcdef-commit.md"><img src="https://my-badges.github.io/my-badges/abcdef-commit.png" alt="One of my commit sha starts with &quot;abcdef&quot;." title="One of my commit sha starts with &quot;abcdef&quot;." width="64"></a>
+<a href="my-badges/abcd-commit.md"><img src="https://my-badges.github.io/my-badges/abcd-commit.png" alt="One of my commit sha starts with &quot;abcd&quot;." title="One of my commit sha starts with &quot;abcd&quot;." width="64"></a>
+<a href="my-badges/abcde-commit.md"><img src="https://my-badges.github.io/my-badges/abcde-commit.png" alt="One of my commit sha starts with &quot;abcde&quot;." title="One of my commit sha starts with &quot;abcde&quot;." width="64"></a>
 <!-- my-badges end -->
 
