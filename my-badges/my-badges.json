@@ -24,7 +24,7 @@
     "id": "morning-commits",
     "tier": 0,
     "desc": "I commit in the morning.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/rustyhook/commit/5a416afbc41d10ff368e8063c311c083df0d5011\">5a416af</a>\n- <a href=\"https://github.com/mmichie/gosh/commit/e680d38a6a80c01b17dd308b0baa6b0b01f9a827\">e680d38</a>\n- <a href=\"https://github.com/mmichie/m28/commit/7b7b11106ef63ef606d9233e54403fb0c64444db\">7b7b111</a>\n- <a href=\"https://github.com/mmichie/m28/commit/0d85776dbfaf00227b2dd06efcb065c0a6721235\">0d85776</a>\n- <a href=\"https://github.com/mmichie/m28/commit/ad3c1f2f8fdfe5d818209c13d078c2775159b5dd\">ad3c1f2</a>\n- <a href=\"https://github.com/mmichie/m28/commit/fcb9ca45401da67365849e25a931f11d2f6f4379\">fcb9ca4</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/rustyhook/commit/ec3eb0bd516cb8d9c412fd3a7f52ab5bd05ab550\">ec3eb0b</a>\n- <a href=\"https://github.com/mmichie/m28/commit/e0649b69c268bf65901cee4752642cd125f684b9\">e0649b6</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/5a416afbc41d10ff368e8063c311c083df0d5011\">5a416af</a>\n- <a href=\"https://github.com/mmichie/gosh/commit/e680d38a6a80c01b17dd308b0baa6b0b01f9a827\">e680d38</a>\n- <a href=\"https://github.com/mmichie/m28/commit/7b7b11106ef63ef606d9233e54403fb0c64444db\">7b7b111</a>\n- <a href=\"https://github.com/mmichie/m28/commit/0d85776dbfaf00227b2dd06efcb065c0a6721235\">0d85776</a>",
     "image": "https://my-badges.github.io/my-badges/morning-commits.png"
   },
   {
@@ -80,7 +80,7 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"add\".",
-    "body": "My favorite commit message words are:\n\n1. add (used 3432 times)\n2. support (used 1419 times)\n3. tests (used 1201 times)\n4. update (used 1186 times)\n5. added (used 1116 times)",
+    "body": "My favorite commit message words are:\n\n1. add (used 3440 times)\n2. support (used 1419 times)\n3. tests (used 1203 times)\n4. update (used 1191 times)\n5. added (used 1116 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
@@ -129,7 +129,7 @@
     "id": "sleepy-coder",
     "tier": 0,
     "desc": "I am a sleepy coder.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/rustyhook/commit/239184aa2f4a6b5ede7e9e5604b5481391bebfbe\">239184a</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/159f72336e53e20a2a89c7fe63faf2628026320e\">159f723</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/18bf8c56612531f7480c82f2989ee5812902eb54\">18bf8c5</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/38363bd23659dc8caccabccaca66ff87a8abc56a\">38363bd</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/e714b47598126ad867536baf87e4a0c2b3f4de38\">e714b47</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/0898d65220072615665ddf897efa8286a4fa57e9\">0898d65</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/rustyhook/commit/6ff227cbf2f68badedc2937ff201cf12ab7fd248\">6ff227c</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/6cad6c8da6436d9037cd5720ea0e87810f802ec7\">6cad6c8</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/239184aa2f4a6b5ede7e9e5604b5481391bebfbe\">239184a</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/159f72336e53e20a2a89c7fe63faf2628026320e\">159f723</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/18bf8c56612531f7480c82f2989ee5812902eb54\">18bf8c5</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/38363bd23659dc8caccabccaca66ff87a8abc56a\">38363bd</a>",
     "image": "https://my-badges.github.io/my-badges/sleepy-coder.png"
   },
   {
@@ -222,5 +222,12 @@
     "desc": "One of my commit sha starts with \"abcde\".",
     "body": "- <a href=\"https://github.com/mmichie/dotfiles/commit/abcde6fc7528fab11883f70a6fba71b8b14abcc9\"><strong>abcde</strong>6fc7528fab11883f70a6fba71b8b14abcc9</a>",
     "image": "https://my-badges.github.io/my-badges/abcde-commit.png"
+  },
+  {
+    "id": "emoji-only-commit",
+    "tier": 0,
+    "desc": "I used only emojis in my commit message.",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/m28/commit/e0649b69c268bf65901cee4752642cd125f684b9\">e0649b6</a>: 🐛",
+    "image": "https://my-badges.github.io/my-badges/emoji-only-commit.png"
   }
 ]
