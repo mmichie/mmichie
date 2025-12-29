@@ -31,7 +31,7 @@
     "id": "evening-commits",
     "tier": 0,
     "desc": "I commit in the evening.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/rustyhook/commit/9b5c7a44937c613b2c02abad9d25a5a2af741832\">9b5c7a4</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/8e10498beab7f1e215de2adecf0ba0453ca31b69\">8e10498</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/9de0f53f072cba3ba4fb3c86cabe14b7d6ba0de7\">9de0f53</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/8b7e681592a6ab832c8a04ef12925b172ef7f039\">8b7e681</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/56bd9cc69856b2b2e9eca58e1560757547faa65d\">56bd9cc</a>\n- <a href=\"https://github.com/mmichie/fishjelly/commit/180b4f4ee18dd057f45ce3091464620076270c9c\">180b4f4</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/rustyhook/commit/dbfd024bf451a4cf1c10c6eef0fd31f46fdcd985\">dbfd024</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/ea21c3f26b8c53e50d8abcfcfbc776c9bc51e4f5\">ea21c3f</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/41cf2b0818ad9b22a622dd1f92b597e0d87703cb\">41cf2b0</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/9b5c7a44937c613b2c02abad9d25a5a2af741832\">9b5c7a4</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/8e10498beab7f1e215de2adecf0ba0453ca31b69\">8e10498</a>\n- <a href=\"https://github.com/mmichie/rustyhook/commit/9de0f53f072cba3ba4fb3c86cabe14b7d6ba0de7\">9de0f53</a>",
     "image": "https://my-badges.github.io/my-badges/evening-commits.png"
   },
   {
@@ -80,7 +80,7 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"add\".",
-    "body": "My favorite commit message words are:\n\n1. add (used 3440 times)\n2. support (used 1419 times)\n3. tests (used 1203 times)\n4. update (used 1191 times)\n5. function (used 1131 times)",
+    "body": "My favorite commit message words are:\n\n1. add (used 3451 times)\n2. support (used 1425 times)\n3. tests (used 1212 times)\n4. update (used 1191 times)\n5. added (used 1116 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
