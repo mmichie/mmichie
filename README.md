@@ -49,5 +49,6 @@ Here are some ideas to get you started:
 <a href="my-badges/abcd-commit.md"><img src="https://my-badges.github.io/my-badges/abcd-commit.png" alt="One of my commit sha starts with &quot;abcd&quot;." title="One of my commit sha starts with &quot;abcd&quot;." width="64"></a>
 <a href="my-badges/abcde-commit.md"><img src="https://my-badges.github.io/my-badges/abcde-commit.png" alt="One of my commit sha starts with &quot;abcde&quot;." title="One of my commit sha starts with &quot;abcde&quot;." width="64"></a>
 <a href="my-badges/emoji-only-commit.md"><img src="https://my-badges.github.io/my-badges/emoji-only-commit.png" alt="I used only emojis in my commit message." title="I used only emojis in my commit message." width="64"></a>
+<a href="my-badges/old-issue-9.md"><img src="https://my-badges.github.io/my-badges/old-issue-9.png" alt="I closed an issue that was open for 9 years" title="I closed an issue that was open for 9 years" width="64"></a>
 <!-- my-badges end -->
 
