@@ -4,7 +4,7 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/lima/commit/e1312140350ff94f3b3bf4ecf4c268b28138eeb5">e131214</a>: chore(beads): close lima-5395 transaction list task
+- <a href="https://github.com/mmichie/plx/commit/5615fc44d30352ce24e3317817cb04c1beb26b49">5615fc4</a>: chore: add MIT license
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

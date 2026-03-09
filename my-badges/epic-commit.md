@@ -4,6 +4,7 @@
 
 Commits:
 
+- <a href="https://github.com/mmichie/plx/commit/d26c2a76b490a2ff59ea98108cbe6652d858be32">d26c2a7</a>
 - <a href="https://github.com/mmichie/lima/commit/5ed13adc359ff54285e715d60e7bceafbac986f7">5ed13ad</a>
 - <a href="https://github.com/mmichie/lima/commit/5bdbd9addf95a10705b5520ef390096614a9e18a">5bdbd9a</a>
 - <a href="https://github.com/mmichie/lima/commit/f88894311616f65c7bbbefa51055a52c38bae1b8">f888943</a>
