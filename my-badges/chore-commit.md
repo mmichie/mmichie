@@ -4,7 +4,7 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/plx/commit/5615fc44d30352ce24e3317817cb04c1beb26b49">5615fc4</a>: chore: add MIT license
+- <a href="https://github.com/mmichie/plx/commit/a097c2fb370c52b0c5983655f03241496cc3de79">a097c2f</a>: chore: sync beads issues
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
