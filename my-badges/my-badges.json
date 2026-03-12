@@ -31,7 +31,7 @@
     "id": "evening-commits",
     "tier": 0,
     "desc": "I commit in the evening.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/plx/commit/9e640ee369a995c8825622f609d70bacdde3c82b\">9e640ee</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/b05f552f6fe85660dafa61b596501854460b3630\">b05f552</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/c17d5f58336ded5881afa52faecf05aea36f5870\">c17d5f5</a>\n- <a href=\"https://github.com/mmichie/plx/commit/6bf24c10de198312c862520ae47682be6fcc4562\">6bf24c1</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/3ad1fb552a7d0413096bb14dc55185caad1e737a\">3ad1fb5</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/56247326800f8fdd4566d7bc8b8539ffb7c3b062\">5624732</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/dotfiles/commit/4adcc5899628e1e5b4548163fd800803ad4fb057\">4adcc58</a>\n- <a href=\"https://github.com/mmichie/plx/commit/9e640ee369a995c8825622f609d70bacdde3c82b\">9e640ee</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/b05f552f6fe85660dafa61b596501854460b3630\">b05f552</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/c17d5f58336ded5881afa52faecf05aea36f5870\">c17d5f5</a>\n- <a href=\"https://github.com/mmichie/plx/commit/6bf24c10de198312c862520ae47682be6fcc4562\">6bf24c1</a>\n- <a href=\"https://github.com/mmichie/dotfiles/commit/3ad1fb552a7d0413096bb14dc55185caad1e737a\">3ad1fb5</a>",
     "image": "https://my-badges.github.io/my-badges/evening-commits.png"
   },
   {
@@ -80,7 +80,7 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"add\".",
-    "body": "My favorite commit message words are:\n\n1. add (used 3649 times)\n2. support (used 1463 times)\n3. tests (used 1205 times)\n4. update (used 1188 times)\n5. function (used 1128 times)",
+    "body": "My favorite commit message words are:\n\n1. add (used 3651 times)\n2. support (used 1463 times)\n3. tests (used 1205 times)\n4. update (used 1188 times)\n5. function (used 1128 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
@@ -143,7 +143,7 @@
     "id": "fix-3",
     "tier": 2,
     "desc": "I did 3 sequential fixes.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/lima/commit/b95e20b07b0759af2f9c66faebf2a25d3a66ff9c\">b95e20b</a>: fix(ui): use table.KeyMap for proper vim-style navigation\n\nConfigured the table's native KeyMap instead of manually converting keys:\n\n- Set km.LineUp to \"k\" and \"up\"\n- Set km.LineDown to \"j\" and \"down\"\n- Set km.GotoTop to \"g\" and \"home\"\n- Set km.GotoBottom to \"G\" and \"end\"\n- Set page up/down to ctrl+u/d and pgup/pgdn\n\nThis is the correct way to add custom keybindings to bubbles table.\nThe table component will now properly handle j/k navigation.\n- <a href=\"https://github.com/mmichie/lima/commit/91c12f06346541e79b1c47e638391dacae488c14\">91c12f0</a>: fix(ui): add vim-style j/k navigation and enable table focus\n\nAdded support for vim-style navigation and improved selection visibility:\n\n- Map j/k keys to down/up arrow keys for familiar vim navigation\n- Call table.Focus() to enable selection highlighting\n- Used fresh lipgloss.NewStyle() for Selected and Cell styles\n\nNow j/k should work in addition to arrow keys, and the selected row\nshould be highlighted with the TP7 cyan background (black text on cyan).\n- <a href=\"https://github.com/mmichie/lima/commit/c3d1dcf86f8552f7f1025a8a6a67064d57651417\">c3d1dcf</a>: fix(ui): enable table scrolling by properly delegating key events\n\nFixed keyboard navigation in the transactions table:\n\n- Moved table.Update() delegation to handle all non-enter key events\n- This allows the table component to handle j/k, arrows, pgup/pgdn, home/end, g/G\n- Only intercept 'enter' for categorization functionality\n- Category picker still handles its own keys when active\n\nThe bubbles table component has built-in navigation that we need to\ndelegate to - now keyboard scrolling works properly.",
+    "body": "Commits:\n\n- <a href=\"https://github.com/mmichie/plx/commit/a273b1d84ab93650dcba19cebd552ffb782da564\">a273b1d</a>: fix: use chafa in tmux, Kitty graphics in direct terminal only\n\nKitty graphics protocol through tmux passthrough has fundamental\nissues (images persist across tab switches, cursor doesn't advance).\nFall back to piping PNG through chafa when $TMUX is set. Kitty\nprotocol is used only in direct terminal sessions where it works\nperfectly.\n- <a href=\"https://github.com/mmichie/plx/commit/844236e0045b1fa1554f5240bc96485cfc2db7f7\">844236e</a>: fix: add q=2 (quiet) to suppress Kitty graphics response\n- <a href=\"https://github.com/mmichie/plx/commit/e1f2541c7d1e91488f4862c58c53d7dffac18104\">e1f2541</a>: fix: tmux passthrough for Kitty graphics protocol\n\nDetect $TMUX and wrap each Kitty graphics chunk in DCS passthrough\n(ESC Ptmux; ... ESC \\) with inner ESC bytes doubled per tmux spec.",
     "image": "https://my-badges.github.io/my-badges/fix-3.png"
   },
   {
