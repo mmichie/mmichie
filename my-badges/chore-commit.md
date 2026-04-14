@@ -4,7 +4,7 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/plx/commit/a097c2fb370c52b0c5983655f03241496cc3de79">a097c2f</a>: chore: sync beads issues
+- <a href="https://github.com/mmichie/plx/commit/811f40688584bf735838f640ec87b84f34ad798f">811f406</a>: chore: bump to 0.2.0 and add tag-triggered GitHub Release job
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
