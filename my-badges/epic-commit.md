@@ -4,6 +4,7 @@
 
 Commits:
 
+- <a href="https://github.com/mmichie/plx/commit/5bfb0c6242396a6a12fb442772befbf878c15a6a">5bfb0c6</a>
 - <a href="https://github.com/mmichie/plx/commit/984386cfb820268f4124df0b483f44dbfc2c6bd8">984386c</a>
 - <a href="https://github.com/mmichie/plx/commit/9e640ee369a995c8825622f609d70bacdde3c82b">9e640ee</a>
 - <a href="https://github.com/mmichie/plx/commit/44ab3ce0705cbce675f1177025241bb3cf466152">44ab3ce</a>
