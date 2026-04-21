@@ -4,12 +4,12 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/dotfiles/commit/2b91316a22cca5c206da2b70de4fbdc45d48ed47">2b91316</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/e85f086ceac7449b143e981223524eea0b6ee546">e85f086</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/5d10a4f811332369b4f2828b5058e547b8a3c0e9">5d10a4f</a>
-- <a href="https://github.com/mmichie/plx/commit/711cf5e75b22ed3e9bd0a21437ff64c5d96685e6">711cf5e</a>
-- <a href="https://github.com/mmichie/plx/commit/811f40688584bf735838f640ec87b84f34ad798f">811f406</a>
-- <a href="https://github.com/mmichie/dotfiles/commit/f6c44d35f91c0659b288b588afb1245826cb01db">f6c44d3</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/cbf2eff7dd313c8bec253f04c90033a20f2b53b1">cbf2eff</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/47c59decebac6eb71a4190629a714dcd2c775620">47c59de</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/8b105f6f4108d45be6ca651190376c1d324c33f0">8b105f6</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/3e20393db1ebcaee6193cac36b825c4719ba4fbe">3e20393</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/e1536f89622427ea1506890951b53a69115a9ec2">e1536f8</a>
+- <a href="https://github.com/mmichie/dotfiles/commit/a25104ae0c5098f46c5e77f6a6b055a14ec4d57d">a25104a</a>
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
