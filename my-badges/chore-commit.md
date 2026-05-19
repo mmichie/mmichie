@@ -4,15 +4,15 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/plx/commit/d96e177ce151fffb267808284e20b27539e784b2">d96e177</a>: chore: workflow_dispatch trigger + .direnv/.br_recovery gitignores
+- <a href="https://github.com/shiprock/chevron/commit/dfaa74f3d8307082874df8754ddac8c84c4ef271">dfaa74f</a>: chore(beads): close plx-7rc.1 (GitHub transfer + rename to chevron)
 
-- ci.yml: add `workflow_dispatch:` so CI can be manually rerun from
-  the GitHub UI (useful for chasing flake rates).
-- .gitignore: add `.direnv/` (created by direnv on first activation
-  via the .envrc we added) and `.beads/.br_recovery/` (timestamped
-  beads recovery snapshots not covered by .beads/.gitignore).
+mmichie/plx → shiprock/plx → shiprock/chevron in two API calls. Local
+git remote updated to git@github.com:shiprock/chevron.git; fetch verified
+and HEAD matches origin/master. GitHub serves 301 redirects from the old
+URLs so any existing clones, references, or links keep working.
 
-Both follow the sak conventions.
+The in-tree rename (Cargo.toml name field, source imports, README, etc.)
+is plx-7rc.3 and will happen in a fresh session.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

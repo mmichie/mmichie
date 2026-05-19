@@ -4,7 +4,7 @@
 
 Commits:
 
-- <a href="https://github.com/mmichie/plx/commit/b992969856f1d709485f6f881f160720c6e97cb7">b992969</a>: fix(custom_command): replace `echo -n ''` with `true` in empty-output test
+- <a href="https://github.com/shiprock/chevron/commit/b992969856f1d709485f6f881f160720c6e97cb7">b992969</a>: fix(custom_command): replace `echo -n ''` with `true` in empty-output test
 
 The 5x test stress loop on macos-latest surfaced a flake in
 `run_empty_output_returns_none`: `echo -n ''` is non-portable — some
@@ -15,7 +15,7 @@ empty argument, which causes the test to receive output and fail the
 Switch to `true`, which always succeeds and writes nothing. This
 mirrors the `false` used in the adjacent `run_failing_command_returns_none`
 test.
-- <a href="https://github.com/mmichie/plx/commit/a23ca592dc6d02ce68c136363530df2ceb215a63">a23ca59</a>: fix: resolve clippy lints introduced in rust 1.95
+- <a href="https://github.com/shiprock/chevron/commit/a23ca592dc6d02ce68c136363530df2ceb215a63">a23ca59</a>: fix: resolve clippy lints introduced in rust 1.95
 
 CI's stable rustc (1.95) flags lints that local 1.94 doesn't yet:
 
